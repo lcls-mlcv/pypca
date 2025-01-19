@@ -1,0 +1,30 @@
+/sdf/group/lcls/ds/ana/sw/conda1/inst/envs/ana-4.0.65-py3/bin/python
+Server is running
+Number of images: 1000
+Number of events to collect per run: [1000]
+Starting server ...
+Server environment deactivated
+/sdf/group/lcls/ds/tools/conda_envs/py3.11-nopsana-torch-rapids/bin/python
+Client environment activated
+
+Python executable location from client:
+/sdf/group/lcls/ds/tools/conda_envs/py3.11-nopsana-torch-rapids/bin/python
+Running on node: sdfampere031
+Number of images seen: 1000
+Shape current batch: 4 (1000, 1, 352, 384)
+Time elapsed for fitting: 69.91792321205139 seconds.
+=====================================
+
+FITTING : DONE
+
+Loading time:  50.148988246917725
+Treating time:  7.01862096786499
+Gathering+Fitting time:  12.750303983688354
+
+=====================================
+Model saved to /sdf/data/lcls/ds/mfx/mfxp23120/scratch/test_btx/pipca/pypca_model_1000_1000_100_n4_node_1.h5 in 12.18158507347107 seconds
+DONE
+Server is shut down!
+Pipca is done!
+Time elapsed: 85.03099489212036 seconds.
+Received shutdown signal. Shutting down server.

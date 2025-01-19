@@ -1,0 +1,12 @@
+ana-4.0.65-py3        *  /sdf/group/lcls/ds/ana/sw/conda1/inst/envs/ana-4.0.65-py3
+/sdf/group/lcls/ds/ana/sw/conda1/inst/envs/ana-4.0.65-py3/bin/mpirun
+/sdf/group/lcls/ds/ana/sw/conda1/inst/envs/ana-4.0.65-py3/bin/python
+/sdf/group/lcls/ds/ana/sw/conda1/inst/envs/ana-4.0.60-py3/bin/python /sdf/home/n/nathfrn/pypca/scripts/main.py -c yamls/mfxp23120.yaml -t create_pypca_multinodes
+Traceback (most recent call last):
+  File "/sdf/home/n/nathfrn/pypca/scripts/main.py", line 61, in <module>
+    retval, status_message = main()
+  File "/sdf/home/n/nathfrn/pypca/scripts/main.py", line 21, in main
+    with open(config_filepath, "r") as config_file:
+FileNotFoundError: [Errno 2] No such file or directory: 'yamls/mfxp23120.yaml'
+
+Error: Task failed.

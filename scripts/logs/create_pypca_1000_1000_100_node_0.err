@@ -1,0 +1,418 @@
+INFO:root:Loaded 1000 images from run 91.
+INFO:root:Number of non-none images in the current batch: 1000
+/sdf/group/lcls/ds/ana/sw/conda1/inst/envs/ana-4.0.65-py3/lib/python3.9/multiprocessing/resource_tracker.py:216: UserWarning: resource_tracker: There appear to be 207 leaked shared_memory objects to clean up at shutdown
+  warnings.warn('resource_tracker: There appear to be %d '
+/sdf/group/lcls/ds/ana/sw/conda1/inst/envs/ana-4.0.65-py3/lib/python3.9/multiprocessing/resource_tracker.py:229: UserWarning: resource_tracker: '/psm_4ddeb259': [Errno 2] No such file or directory: '/psm_4ddeb259'
+  warnings.warn('resource_tracker: %r: %s' % (name, e))
+/sdf/group/lcls/ds/ana/sw/conda1/inst/envs/ana-4.0.65-py3/lib/python3.9/multiprocessing/resource_tracker.py:229: UserWarning: resource_tracker: '/psm_f9e1859b': [Errno 2] No such file or directory: '/psm_f9e1859b'
+  warnings.warn('resource_tracker: %r: %s' % (name, e))
+/sdf/group/lcls/ds/ana/sw/conda1/inst/envs/ana-4.0.65-py3/lib/python3.9/multiprocessing/resource_tracker.py:229: UserWarning: resource_tracker: '/psm_96f88c18': [Errno 2] No such file or directory: '/psm_96f88c18'
+  warnings.warn('resource_tracker: %r: %s' % (name, e))
+/sdf/group/lcls/ds/ana/sw/conda1/inst/envs/ana-4.0.65-py3/lib/python3.9/multiprocessing/resource_tracker.py:229: UserWarning: resource_tracker: '/psm_11cd2945': [Errno 2] No such file or directory: '/psm_11cd2945'
+  warnings.warn('resource_tracker: %r: %s' % (name, e))
+/sdf/group/lcls/ds/ana/sw/conda1/inst/envs/ana-4.0.65-py3/lib/python3.9/multiprocessing/resource_tracker.py:229: UserWarning: resource_tracker: '/psm_f1291d09': [Errno 2] No such file or directory: '/psm_f1291d09'
+  warnings.warn('resource_tracker: %r: %s' % (name, e))
+/sdf/group/lcls/ds/ana/sw/conda1/inst/envs/ana-4.0.65-py3/lib/python3.9/multiprocessing/resource_tracker.py:229: UserWarning: resource_tracker: '/psm_f803e4fc': [Errno 2] No such file or directory: '/psm_f803e4fc'
+  warnings.warn('resource_tracker: %r: %s' % (name, e))
+/sdf/group/lcls/ds/ana/sw/conda1/inst/envs/ana-4.0.65-py3/lib/python3.9/multiprocessing/resource_tracker.py:229: UserWarning: resource_tracker: '/psm_494dd2a8': [Errno 2] No such file or directory: '/psm_494dd2a8'
+  warnings.warn('resource_tracker: %r: %s' % (name, e))
+/sdf/group/lcls/ds/ana/sw/conda1/inst/envs/ana-4.0.65-py3/lib/python3.9/multiprocessing/resource_tracker.py:229: UserWarning: resource_tracker: '/psm_62409b79': [Errno 2] No such file or directory: '/psm_62409b79'
+  warnings.warn('resource_tracker: %r: %s' % (name, e))
+/sdf/group/lcls/ds/ana/sw/conda1/inst/envs/ana-4.0.65-py3/lib/python3.9/multiprocessing/resource_tracker.py:229: UserWarning: resource_tracker: '/psm_36e9f6b9': [Errno 2] No such file or directory: '/psm_36e9f6b9'
+  warnings.warn('resource_tracker: %r: %s' % (name, e))
+/sdf/group/lcls/ds/ana/sw/conda1/inst/envs/ana-4.0.65-py3/lib/python3.9/multiprocessing/resource_tracker.py:229: UserWarning: resource_tracker: '/psm_50f8589d': [Errno 2] No such file or directory: '/psm_50f8589d'
+  warnings.warn('resource_tracker: %r: %s' % (name, e))
+/sdf/group/lcls/ds/ana/sw/conda1/inst/envs/ana-4.0.65-py3/lib/python3.9/multiprocessing/resource_tracker.py:229: UserWarning: resource_tracker: '/psm_1f406a0a': [Errno 2] No such file or directory: '/psm_1f406a0a'
+  warnings.warn('resource_tracker: %r: %s' % (name, e))
+/sdf/group/lcls/ds/ana/sw/conda1/inst/envs/ana-4.0.65-py3/lib/python3.9/multiprocessing/resource_tracker.py:229: UserWarning: resource_tracker: '/psm_2d0cb3e1': [Errno 2] No such file or directory: '/psm_2d0cb3e1'
+  warnings.warn('resource_tracker: %r: %s' % (name, e))
+/sdf/group/lcls/ds/ana/sw/conda1/inst/envs/ana-4.0.65-py3/lib/python3.9/multiprocessing/resource_tracker.py:229: UserWarning: resource_tracker: '/psm_3f5fc1bc': [Errno 2] No such file or directory: '/psm_3f5fc1bc'
+  warnings.warn('resource_tracker: %r: %s' % (name, e))
+/sdf/group/lcls/ds/ana/sw/conda1/inst/envs/ana-4.0.65-py3/lib/python3.9/multiprocessing/resource_tracker.py:229: UserWarning: resource_tracker: '/psm_e8e382f9': [Errno 2] No such file or directory: '/psm_e8e382f9'
+  warnings.warn('resource_tracker: %r: %s' % (name, e))
+/sdf/group/lcls/ds/ana/sw/conda1/inst/envs/ana-4.0.65-py3/lib/python3.9/multiprocessing/resource_tracker.py:229: UserWarning: resource_tracker: '/psm_2ac87583': [Errno 2] No such file or directory: '/psm_2ac87583'
+  warnings.warn('resource_tracker: %r: %s' % (name, e))
+/sdf/group/lcls/ds/ana/sw/conda1/inst/envs/ana-4.0.65-py3/lib/python3.9/multiprocessing/resource_tracker.py:229: UserWarning: resource_tracker: '/psm_9ee0a033': [Errno 2] No such file or directory: '/psm_9ee0a033'
+  warnings.warn('resource_tracker: %r: %s' % (name, e))
+/sdf/group/lcls/ds/ana/sw/conda1/inst/envs/ana-4.0.65-py3/lib/python3.9/multiprocessing/resource_tracker.py:229: UserWarning: resource_tracker: '/psm_7472ca7d': [Errno 2] No such file or directory: '/psm_7472ca7d'
+  warnings.warn('resource_tracker: %r: %s' % (name, e))
+/sdf/group/lcls/ds/ana/sw/conda1/inst/envs/ana-4.0.65-py3/lib/python3.9/multiprocessing/resource_tracker.py:229: UserWarning: resource_tracker: '/psm_d9393ce7': [Errno 2] No such file or directory: '/psm_d9393ce7'
+  warnings.warn('resource_tracker: %r: %s' % (name, e))
+/sdf/group/lcls/ds/ana/sw/conda1/inst/envs/ana-4.0.65-py3/lib/python3.9/multiprocessing/resource_tracker.py:229: UserWarning: resource_tracker: '/psm_6176322c': [Errno 2] No such file or directory: '/psm_6176322c'
+  warnings.warn('resource_tracker: %r: %s' % (name, e))
+/sdf/group/lcls/ds/ana/sw/conda1/inst/envs/ana-4.0.65-py3/lib/python3.9/multiprocessing/resource_tracker.py:229: UserWarning: resource_tracker: '/psm_0324b9da': [Errno 2] No such file or directory: '/psm_0324b9da'
+  warnings.warn('resource_tracker: %r: %s' % (name, e))
+/sdf/group/lcls/ds/ana/sw/conda1/inst/envs/ana-4.0.65-py3/lib/python3.9/multiprocessing/resource_tracker.py:229: UserWarning: resource_tracker: '/psm_bccdb345': [Errno 2] No such file or directory: '/psm_bccdb345'
+  warnings.warn('resource_tracker: %r: %s' % (name, e))
+/sdf/group/lcls/ds/ana/sw/conda1/inst/envs/ana-4.0.65-py3/lib/python3.9/multiprocessing/resource_tracker.py:229: UserWarning: resource_tracker: '/psm_25ad5072': [Errno 2] No such file or directory: '/psm_25ad5072'
+  warnings.warn('resource_tracker: %r: %s' % (name, e))
+/sdf/group/lcls/ds/ana/sw/conda1/inst/envs/ana-4.0.65-py3/lib/python3.9/multiprocessing/resource_tracker.py:229: UserWarning: resource_tracker: '/psm_ffe2f8a4': [Errno 2] No such file or directory: '/psm_ffe2f8a4'
+  warnings.warn('resource_tracker: %r: %s' % (name, e))
+/sdf/group/lcls/ds/ana/sw/conda1/inst/envs/ana-4.0.65-py3/lib/python3.9/multiprocessing/resource_tracker.py:229: UserWarning: resource_tracker: '/psm_3b53db1a': [Errno 2] No such file or directory: '/psm_3b53db1a'
+  warnings.warn('resource_tracker: %r: %s' % (name, e))
+/sdf/group/lcls/ds/ana/sw/conda1/inst/envs/ana-4.0.65-py3/lib/python3.9/multiprocessing/resource_tracker.py:229: UserWarning: resource_tracker: '/psm_6f03ba65': [Errno 2] No such file or directory: '/psm_6f03ba65'
+  warnings.warn('resource_tracker: %r: %s' % (name, e))
+/sdf/group/lcls/ds/ana/sw/conda1/inst/envs/ana-4.0.65-py3/lib/python3.9/multiprocessing/resource_tracker.py:229: UserWarning: resource_tracker: '/psm_b5495c95': [Errno 2] No such file or directory: '/psm_b5495c95'
+  warnings.warn('resource_tracker: %r: %s' % (name, e))
+/sdf/group/lcls/ds/ana/sw/conda1/inst/envs/ana-4.0.65-py3/lib/python3.9/multiprocessing/resource_tracker.py:229: UserWarning: resource_tracker: '/psm_c0a6d493': [Errno 2] No such file or directory: '/psm_c0a6d493'
+  warnings.warn('resource_tracker: %r: %s' % (name, e))
+/sdf/group/lcls/ds/ana/sw/conda1/inst/envs/ana-4.0.65-py3/lib/python3.9/multiprocessing/resource_tracker.py:229: UserWarning: resource_tracker: '/psm_9f8d6d46': [Errno 2] No such file or directory: '/psm_9f8d6d46'
+  warnings.warn('resource_tracker: %r: %s' % (name, e))
+/sdf/group/lcls/ds/ana/sw/conda1/inst/envs/ana-4.0.65-py3/lib/python3.9/multiprocessing/resource_tracker.py:229: UserWarning: resource_tracker: '/psm_3e538913': [Errno 2] No such file or directory: '/psm_3e538913'
+  warnings.warn('resource_tracker: %r: %s' % (name, e))
+/sdf/group/lcls/ds/ana/sw/conda1/inst/envs/ana-4.0.65-py3/lib/python3.9/multiprocessing/resource_tracker.py:229: UserWarning: resource_tracker: '/psm_4d657a02': [Errno 2] No such file or directory: '/psm_4d657a02'
+  warnings.warn('resource_tracker: %r: %s' % (name, e))
+/sdf/group/lcls/ds/ana/sw/conda1/inst/envs/ana-4.0.65-py3/lib/python3.9/multiprocessing/resource_tracker.py:229: UserWarning: resource_tracker: '/psm_7beb27df': [Errno 2] No such file or directory: '/psm_7beb27df'
+  warnings.warn('resource_tracker: %r: %s' % (name, e))
+/sdf/group/lcls/ds/ana/sw/conda1/inst/envs/ana-4.0.65-py3/lib/python3.9/multiprocessing/resource_tracker.py:229: UserWarning: resource_tracker: '/psm_05f7b9d3': [Errno 2] No such file or directory: '/psm_05f7b9d3'
+  warnings.warn('resource_tracker: %r: %s' % (name, e))
+/sdf/group/lcls/ds/ana/sw/conda1/inst/envs/ana-4.0.65-py3/lib/python3.9/multiprocessing/resource_tracker.py:229: UserWarning: resource_tracker: '/psm_0c7abf9f': [Errno 2] No such file or directory: '/psm_0c7abf9f'
+  warnings.warn('resource_tracker: %r: %s' % (name, e))
+/sdf/group/lcls/ds/ana/sw/conda1/inst/envs/ana-4.0.65-py3/lib/python3.9/multiprocessing/resource_tracker.py:229: UserWarning: resource_tracker: '/psm_00e7f9fc': [Errno 2] No such file or directory: '/psm_00e7f9fc'
+  warnings.warn('resource_tracker: %r: %s' % (name, e))
+/sdf/group/lcls/ds/ana/sw/conda1/inst/envs/ana-4.0.65-py3/lib/python3.9/multiprocessing/resource_tracker.py:229: UserWarning: resource_tracker: '/psm_225601b9': [Errno 2] No such file or directory: '/psm_225601b9'
+  warnings.warn('resource_tracker: %r: %s' % (name, e))
+/sdf/group/lcls/ds/ana/sw/conda1/inst/envs/ana-4.0.65-py3/lib/python3.9/multiprocessing/resource_tracker.py:229: UserWarning: resource_tracker: '/psm_7b9a1a45': [Errno 2] No such file or directory: '/psm_7b9a1a45'
+  warnings.warn('resource_tracker: %r: %s' % (name, e))
+/sdf/group/lcls/ds/ana/sw/conda1/inst/envs/ana-4.0.65-py3/lib/python3.9/multiprocessing/resource_tracker.py:229: UserWarning: resource_tracker: '/psm_52ca3eff': [Errno 2] No such file or directory: '/psm_52ca3eff'
+  warnings.warn('resource_tracker: %r: %s' % (name, e))
+/sdf/group/lcls/ds/ana/sw/conda1/inst/envs/ana-4.0.65-py3/lib/python3.9/multiprocessing/resource_tracker.py:229: UserWarning: resource_tracker: '/psm_bb825176': [Errno 2] No such file or directory: '/psm_bb825176'
+  warnings.warn('resource_tracker: %r: %s' % (name, e))
+/sdf/group/lcls/ds/ana/sw/conda1/inst/envs/ana-4.0.65-py3/lib/python3.9/multiprocessing/resource_tracker.py:229: UserWarning: resource_tracker: '/psm_9607eb09': [Errno 2] No such file or directory: '/psm_9607eb09'
+  warnings.warn('resource_tracker: %r: %s' % (name, e))
+/sdf/group/lcls/ds/ana/sw/conda1/inst/envs/ana-4.0.65-py3/lib/python3.9/multiprocessing/resource_tracker.py:229: UserWarning: resource_tracker: '/psm_11d38abc': [Errno 2] No such file or directory: '/psm_11d38abc'
+  warnings.warn('resource_tracker: %r: %s' % (name, e))
+/sdf/group/lcls/ds/ana/sw/conda1/inst/envs/ana-4.0.65-py3/lib/python3.9/multiprocessing/resource_tracker.py:229: UserWarning: resource_tracker: '/psm_c593371a': [Errno 2] No such file or directory: '/psm_c593371a'
+  warnings.warn('resource_tracker: %r: %s' % (name, e))
+/sdf/group/lcls/ds/ana/sw/conda1/inst/envs/ana-4.0.65-py3/lib/python3.9/multiprocessing/resource_tracker.py:229: UserWarning: resource_tracker: '/psm_9e34313d': [Errno 2] No such file or directory: '/psm_9e34313d'
+  warnings.warn('resource_tracker: %r: %s' % (name, e))
+/sdf/group/lcls/ds/ana/sw/conda1/inst/envs/ana-4.0.65-py3/lib/python3.9/multiprocessing/resource_tracker.py:229: UserWarning: resource_tracker: '/psm_34b7cd3c': [Errno 2] No such file or directory: '/psm_34b7cd3c'
+  warnings.warn('resource_tracker: %r: %s' % (name, e))
+/sdf/group/lcls/ds/ana/sw/conda1/inst/envs/ana-4.0.65-py3/lib/python3.9/multiprocessing/resource_tracker.py:229: UserWarning: resource_tracker: '/psm_1907d99b': [Errno 2] No such file or directory: '/psm_1907d99b'
+  warnings.warn('resource_tracker: %r: %s' % (name, e))
+/sdf/group/lcls/ds/ana/sw/conda1/inst/envs/ana-4.0.65-py3/lib/python3.9/multiprocessing/resource_tracker.py:229: UserWarning: resource_tracker: '/psm_1840aac9': [Errno 2] No such file or directory: '/psm_1840aac9'
+  warnings.warn('resource_tracker: %r: %s' % (name, e))
+/sdf/group/lcls/ds/ana/sw/conda1/inst/envs/ana-4.0.65-py3/lib/python3.9/multiprocessing/resource_tracker.py:229: UserWarning: resource_tracker: '/psm_8135b2ea': [Errno 2] No such file or directory: '/psm_8135b2ea'
+  warnings.warn('resource_tracker: %r: %s' % (name, e))
+/sdf/group/lcls/ds/ana/sw/conda1/inst/envs/ana-4.0.65-py3/lib/python3.9/multiprocessing/resource_tracker.py:229: UserWarning: resource_tracker: '/psm_62eb949a': [Errno 2] No such file or directory: '/psm_62eb949a'
+  warnings.warn('resource_tracker: %r: %s' % (name, e))
+/sdf/group/lcls/ds/ana/sw/conda1/inst/envs/ana-4.0.65-py3/lib/python3.9/multiprocessing/resource_tracker.py:229: UserWarning: resource_tracker: '/psm_883f5d91': [Errno 2] No such file or directory: '/psm_883f5d91'
+  warnings.warn('resource_tracker: %r: %s' % (name, e))
+/sdf/group/lcls/ds/ana/sw/conda1/inst/envs/ana-4.0.65-py3/lib/python3.9/multiprocessing/resource_tracker.py:229: UserWarning: resource_tracker: '/psm_8344cefa': [Errno 2] No such file or directory: '/psm_8344cefa'
+  warnings.warn('resource_tracker: %r: %s' % (name, e))
+/sdf/group/lcls/ds/ana/sw/conda1/inst/envs/ana-4.0.65-py3/lib/python3.9/multiprocessing/resource_tracker.py:229: UserWarning: resource_tracker: '/psm_56aed9ab': [Errno 2] No such file or directory: '/psm_56aed9ab'
+  warnings.warn('resource_tracker: %r: %s' % (name, e))
+/sdf/group/lcls/ds/ana/sw/conda1/inst/envs/ana-4.0.65-py3/lib/python3.9/multiprocessing/resource_tracker.py:229: UserWarning: resource_tracker: '/psm_5c0aaf70': [Errno 2] No such file or directory: '/psm_5c0aaf70'
+  warnings.warn('resource_tracker: %r: %s' % (name, e))
+/sdf/group/lcls/ds/ana/sw/conda1/inst/envs/ana-4.0.65-py3/lib/python3.9/multiprocessing/resource_tracker.py:229: UserWarning: resource_tracker: '/psm_470882cf': [Errno 2] No such file or directory: '/psm_470882cf'
+  warnings.warn('resource_tracker: %r: %s' % (name, e))
+/sdf/group/lcls/ds/ana/sw/conda1/inst/envs/ana-4.0.65-py3/lib/python3.9/multiprocessing/resource_tracker.py:229: UserWarning: resource_tracker: '/psm_601af94a': [Errno 2] No such file or directory: '/psm_601af94a'
+  warnings.warn('resource_tracker: %r: %s' % (name, e))
+/sdf/group/lcls/ds/ana/sw/conda1/inst/envs/ana-4.0.65-py3/lib/python3.9/multiprocessing/resource_tracker.py:229: UserWarning: resource_tracker: '/psm_016cd2ca': [Errno 2] No such file or directory: '/psm_016cd2ca'
+  warnings.warn('resource_tracker: %r: %s' % (name, e))
+/sdf/group/lcls/ds/ana/sw/conda1/inst/envs/ana-4.0.65-py3/lib/python3.9/multiprocessing/resource_tracker.py:229: UserWarning: resource_tracker: '/psm_954b1ae2': [Errno 2] No such file or directory: '/psm_954b1ae2'
+  warnings.warn('resource_tracker: %r: %s' % (name, e))
+/sdf/group/lcls/ds/ana/sw/conda1/inst/envs/ana-4.0.65-py3/lib/python3.9/multiprocessing/resource_tracker.py:229: UserWarning: resource_tracker: '/psm_6f2cf0f0': [Errno 2] No such file or directory: '/psm_6f2cf0f0'
+  warnings.warn('resource_tracker: %r: %s' % (name, e))
+/sdf/group/lcls/ds/ana/sw/conda1/inst/envs/ana-4.0.65-py3/lib/python3.9/multiprocessing/resource_tracker.py:229: UserWarning: resource_tracker: '/psm_4ff14418': [Errno 2] No such file or directory: '/psm_4ff14418'
+  warnings.warn('resource_tracker: %r: %s' % (name, e))
+/sdf/group/lcls/ds/ana/sw/conda1/inst/envs/ana-4.0.65-py3/lib/python3.9/multiprocessing/resource_tracker.py:229: UserWarning: resource_tracker: '/psm_98147f80': [Errno 2] No such file or directory: '/psm_98147f80'
+  warnings.warn('resource_tracker: %r: %s' % (name, e))
+/sdf/group/lcls/ds/ana/sw/conda1/inst/envs/ana-4.0.65-py3/lib/python3.9/multiprocessing/resource_tracker.py:229: UserWarning: resource_tracker: '/psm_e8393175': [Errno 2] No such file or directory: '/psm_e8393175'
+  warnings.warn('resource_tracker: %r: %s' % (name, e))
+/sdf/group/lcls/ds/ana/sw/conda1/inst/envs/ana-4.0.65-py3/lib/python3.9/multiprocessing/resource_tracker.py:229: UserWarning: resource_tracker: '/psm_d3dbb05e': [Errno 2] No such file or directory: '/psm_d3dbb05e'
+  warnings.warn('resource_tracker: %r: %s' % (name, e))
+/sdf/group/lcls/ds/ana/sw/conda1/inst/envs/ana-4.0.65-py3/lib/python3.9/multiprocessing/resource_tracker.py:229: UserWarning: resource_tracker: '/psm_099aca49': [Errno 2] No such file or directory: '/psm_099aca49'
+  warnings.warn('resource_tracker: %r: %s' % (name, e))
+/sdf/group/lcls/ds/ana/sw/conda1/inst/envs/ana-4.0.65-py3/lib/python3.9/multiprocessing/resource_tracker.py:229: UserWarning: resource_tracker: '/psm_d75b6f6a': [Errno 2] No such file or directory: '/psm_d75b6f6a'
+  warnings.warn('resource_tracker: %r: %s' % (name, e))
+/sdf/group/lcls/ds/ana/sw/conda1/inst/envs/ana-4.0.65-py3/lib/python3.9/multiprocessing/resource_tracker.py:229: UserWarning: resource_tracker: '/psm_6c37d0e4': [Errno 2] No such file or directory: '/psm_6c37d0e4'
+  warnings.warn('resource_tracker: %r: %s' % (name, e))
+/sdf/group/lcls/ds/ana/sw/conda1/inst/envs/ana-4.0.65-py3/lib/python3.9/multiprocessing/resource_tracker.py:229: UserWarning: resource_tracker: '/psm_71e8768a': [Errno 2] No such file or directory: '/psm_71e8768a'
+  warnings.warn('resource_tracker: %r: %s' % (name, e))
+/sdf/group/lcls/ds/ana/sw/conda1/inst/envs/ana-4.0.65-py3/lib/python3.9/multiprocessing/resource_tracker.py:229: UserWarning: resource_tracker: '/psm_f2145212': [Errno 2] No such file or directory: '/psm_f2145212'
+  warnings.warn('resource_tracker: %r: %s' % (name, e))
+/sdf/group/lcls/ds/ana/sw/conda1/inst/envs/ana-4.0.65-py3/lib/python3.9/multiprocessing/resource_tracker.py:229: UserWarning: resource_tracker: '/psm_2bd64f6d': [Errno 2] No such file or directory: '/psm_2bd64f6d'
+  warnings.warn('resource_tracker: %r: %s' % (name, e))
+/sdf/group/lcls/ds/ana/sw/conda1/inst/envs/ana-4.0.65-py3/lib/python3.9/multiprocessing/resource_tracker.py:229: UserWarning: resource_tracker: '/psm_9375ac30': [Errno 2] No such file or directory: '/psm_9375ac30'
+  warnings.warn('resource_tracker: %r: %s' % (name, e))
+/sdf/group/lcls/ds/ana/sw/conda1/inst/envs/ana-4.0.65-py3/lib/python3.9/multiprocessing/resource_tracker.py:229: UserWarning: resource_tracker: '/psm_024de3ad': [Errno 2] No such file or directory: '/psm_024de3ad'
+  warnings.warn('resource_tracker: %r: %s' % (name, e))
+/sdf/group/lcls/ds/ana/sw/conda1/inst/envs/ana-4.0.65-py3/lib/python3.9/multiprocessing/resource_tracker.py:229: UserWarning: resource_tracker: '/psm_6aa87c67': [Errno 2] No such file or directory: '/psm_6aa87c67'
+  warnings.warn('resource_tracker: %r: %s' % (name, e))
+/sdf/group/lcls/ds/ana/sw/conda1/inst/envs/ana-4.0.65-py3/lib/python3.9/multiprocessing/resource_tracker.py:229: UserWarning: resource_tracker: '/psm_a648d5fd': [Errno 2] No such file or directory: '/psm_a648d5fd'
+  warnings.warn('resource_tracker: %r: %s' % (name, e))
+/sdf/group/lcls/ds/ana/sw/conda1/inst/envs/ana-4.0.65-py3/lib/python3.9/multiprocessing/resource_tracker.py:229: UserWarning: resource_tracker: '/psm_20a04cf6': [Errno 2] No such file or directory: '/psm_20a04cf6'
+  warnings.warn('resource_tracker: %r: %s' % (name, e))
+/sdf/group/lcls/ds/ana/sw/conda1/inst/envs/ana-4.0.65-py3/lib/python3.9/multiprocessing/resource_tracker.py:229: UserWarning: resource_tracker: '/psm_3d758039': [Errno 2] No such file or directory: '/psm_3d758039'
+  warnings.warn('resource_tracker: %r: %s' % (name, e))
+/sdf/group/lcls/ds/ana/sw/conda1/inst/envs/ana-4.0.65-py3/lib/python3.9/multiprocessing/resource_tracker.py:229: UserWarning: resource_tracker: '/psm_a87d4ded': [Errno 2] No such file or directory: '/psm_a87d4ded'
+  warnings.warn('resource_tracker: %r: %s' % (name, e))
+/sdf/group/lcls/ds/ana/sw/conda1/inst/envs/ana-4.0.65-py3/lib/python3.9/multiprocessing/resource_tracker.py:229: UserWarning: resource_tracker: '/psm_66c7219c': [Errno 2] No such file or directory: '/psm_66c7219c'
+  warnings.warn('resource_tracker: %r: %s' % (name, e))
+/sdf/group/lcls/ds/ana/sw/conda1/inst/envs/ana-4.0.65-py3/lib/python3.9/multiprocessing/resource_tracker.py:229: UserWarning: resource_tracker: '/psm_359582e5': [Errno 2] No such file or directory: '/psm_359582e5'
+  warnings.warn('resource_tracker: %r: %s' % (name, e))
+/sdf/group/lcls/ds/ana/sw/conda1/inst/envs/ana-4.0.65-py3/lib/python3.9/multiprocessing/resource_tracker.py:229: UserWarning: resource_tracker: '/psm_f4359d7b': [Errno 2] No such file or directory: '/psm_f4359d7b'
+  warnings.warn('resource_tracker: %r: %s' % (name, e))
+/sdf/group/lcls/ds/ana/sw/conda1/inst/envs/ana-4.0.65-py3/lib/python3.9/multiprocessing/resource_tracker.py:229: UserWarning: resource_tracker: '/psm_89bf91d6': [Errno 2] No such file or directory: '/psm_89bf91d6'
+  warnings.warn('resource_tracker: %r: %s' % (name, e))
+/sdf/group/lcls/ds/ana/sw/conda1/inst/envs/ana-4.0.65-py3/lib/python3.9/multiprocessing/resource_tracker.py:229: UserWarning: resource_tracker: '/psm_c73aca9f': [Errno 2] No such file or directory: '/psm_c73aca9f'
+  warnings.warn('resource_tracker: %r: %s' % (name, e))
+/sdf/group/lcls/ds/ana/sw/conda1/inst/envs/ana-4.0.65-py3/lib/python3.9/multiprocessing/resource_tracker.py:229: UserWarning: resource_tracker: '/psm_20d15d34': [Errno 2] No such file or directory: '/psm_20d15d34'
+  warnings.warn('resource_tracker: %r: %s' % (name, e))
+/sdf/group/lcls/ds/ana/sw/conda1/inst/envs/ana-4.0.65-py3/lib/python3.9/multiprocessing/resource_tracker.py:229: UserWarning: resource_tracker: '/psm_ed1b313d': [Errno 2] No such file or directory: '/psm_ed1b313d'
+  warnings.warn('resource_tracker: %r: %s' % (name, e))
+/sdf/group/lcls/ds/ana/sw/conda1/inst/envs/ana-4.0.65-py3/lib/python3.9/multiprocessing/resource_tracker.py:229: UserWarning: resource_tracker: '/psm_25d5448a': [Errno 2] No such file or directory: '/psm_25d5448a'
+  warnings.warn('resource_tracker: %r: %s' % (name, e))
+/sdf/group/lcls/ds/ana/sw/conda1/inst/envs/ana-4.0.65-py3/lib/python3.9/multiprocessing/resource_tracker.py:229: UserWarning: resource_tracker: '/psm_747e7d40': [Errno 2] No such file or directory: '/psm_747e7d40'
+  warnings.warn('resource_tracker: %r: %s' % (name, e))
+/sdf/group/lcls/ds/ana/sw/conda1/inst/envs/ana-4.0.65-py3/lib/python3.9/multiprocessing/resource_tracker.py:229: UserWarning: resource_tracker: '/psm_276f436e': [Errno 2] No such file or directory: '/psm_276f436e'
+  warnings.warn('resource_tracker: %r: %s' % (name, e))
+/sdf/group/lcls/ds/ana/sw/conda1/inst/envs/ana-4.0.65-py3/lib/python3.9/multiprocessing/resource_tracker.py:229: UserWarning: resource_tracker: '/psm_18c71913': [Errno 2] No such file or directory: '/psm_18c71913'
+  warnings.warn('resource_tracker: %r: %s' % (name, e))
+/sdf/group/lcls/ds/ana/sw/conda1/inst/envs/ana-4.0.65-py3/lib/python3.9/multiprocessing/resource_tracker.py:229: UserWarning: resource_tracker: '/psm_bfbdb9f3': [Errno 2] No such file or directory: '/psm_bfbdb9f3'
+  warnings.warn('resource_tracker: %r: %s' % (name, e))
+/sdf/group/lcls/ds/ana/sw/conda1/inst/envs/ana-4.0.65-py3/lib/python3.9/multiprocessing/resource_tracker.py:229: UserWarning: resource_tracker: '/psm_5786b4c1': [Errno 2] No such file or directory: '/psm_5786b4c1'
+  warnings.warn('resource_tracker: %r: %s' % (name, e))
+/sdf/group/lcls/ds/ana/sw/conda1/inst/envs/ana-4.0.65-py3/lib/python3.9/multiprocessing/resource_tracker.py:229: UserWarning: resource_tracker: '/psm_88e52c8b': [Errno 2] No such file or directory: '/psm_88e52c8b'
+  warnings.warn('resource_tracker: %r: %s' % (name, e))
+/sdf/group/lcls/ds/ana/sw/conda1/inst/envs/ana-4.0.65-py3/lib/python3.9/multiprocessing/resource_tracker.py:229: UserWarning: resource_tracker: '/psm_74d9cb79': [Errno 2] No such file or directory: '/psm_74d9cb79'
+  warnings.warn('resource_tracker: %r: %s' % (name, e))
+/sdf/group/lcls/ds/ana/sw/conda1/inst/envs/ana-4.0.65-py3/lib/python3.9/multiprocessing/resource_tracker.py:229: UserWarning: resource_tracker: '/psm_c62d2eba': [Errno 2] No such file or directory: '/psm_c62d2eba'
+  warnings.warn('resource_tracker: %r: %s' % (name, e))
+/sdf/group/lcls/ds/ana/sw/conda1/inst/envs/ana-4.0.65-py3/lib/python3.9/multiprocessing/resource_tracker.py:229: UserWarning: resource_tracker: '/psm_996a1e93': [Errno 2] No such file or directory: '/psm_996a1e93'
+  warnings.warn('resource_tracker: %r: %s' % (name, e))
+/sdf/group/lcls/ds/ana/sw/conda1/inst/envs/ana-4.0.65-py3/lib/python3.9/multiprocessing/resource_tracker.py:229: UserWarning: resource_tracker: '/psm_dbb617ab': [Errno 2] No such file or directory: '/psm_dbb617ab'
+  warnings.warn('resource_tracker: %r: %s' % (name, e))
+/sdf/group/lcls/ds/ana/sw/conda1/inst/envs/ana-4.0.65-py3/lib/python3.9/multiprocessing/resource_tracker.py:229: UserWarning: resource_tracker: '/psm_ce7271b7': [Errno 2] No such file or directory: '/psm_ce7271b7'
+  warnings.warn('resource_tracker: %r: %s' % (name, e))
+/sdf/group/lcls/ds/ana/sw/conda1/inst/envs/ana-4.0.65-py3/lib/python3.9/multiprocessing/resource_tracker.py:229: UserWarning: resource_tracker: '/psm_a3bb031c': [Errno 2] No such file or directory: '/psm_a3bb031c'
+  warnings.warn('resource_tracker: %r: %s' % (name, e))
+/sdf/group/lcls/ds/ana/sw/conda1/inst/envs/ana-4.0.65-py3/lib/python3.9/multiprocessing/resource_tracker.py:229: UserWarning: resource_tracker: '/psm_1aa8bb03': [Errno 2] No such file or directory: '/psm_1aa8bb03'
+  warnings.warn('resource_tracker: %r: %s' % (name, e))
+/sdf/group/lcls/ds/ana/sw/conda1/inst/envs/ana-4.0.65-py3/lib/python3.9/multiprocessing/resource_tracker.py:229: UserWarning: resource_tracker: '/psm_3a95cde0': [Errno 2] No such file or directory: '/psm_3a95cde0'
+  warnings.warn('resource_tracker: %r: %s' % (name, e))
+/sdf/group/lcls/ds/ana/sw/conda1/inst/envs/ana-4.0.65-py3/lib/python3.9/multiprocessing/resource_tracker.py:229: UserWarning: resource_tracker: '/psm_227244fa': [Errno 2] No such file or directory: '/psm_227244fa'
+  warnings.warn('resource_tracker: %r: %s' % (name, e))
+/sdf/group/lcls/ds/ana/sw/conda1/inst/envs/ana-4.0.65-py3/lib/python3.9/multiprocessing/resource_tracker.py:229: UserWarning: resource_tracker: '/psm_62df3adb': [Errno 2] No such file or directory: '/psm_62df3adb'
+  warnings.warn('resource_tracker: %r: %s' % (name, e))
+/sdf/group/lcls/ds/ana/sw/conda1/inst/envs/ana-4.0.65-py3/lib/python3.9/multiprocessing/resource_tracker.py:229: UserWarning: resource_tracker: '/psm_3b510ce1': [Errno 2] No such file or directory: '/psm_3b510ce1'
+  warnings.warn('resource_tracker: %r: %s' % (name, e))
+/sdf/group/lcls/ds/ana/sw/conda1/inst/envs/ana-4.0.65-py3/lib/python3.9/multiprocessing/resource_tracker.py:229: UserWarning: resource_tracker: '/psm_f50b433d': [Errno 2] No such file or directory: '/psm_f50b433d'
+  warnings.warn('resource_tracker: %r: %s' % (name, e))
+/sdf/group/lcls/ds/ana/sw/conda1/inst/envs/ana-4.0.65-py3/lib/python3.9/multiprocessing/resource_tracker.py:229: UserWarning: resource_tracker: '/psm_0da65222': [Errno 2] No such file or directory: '/psm_0da65222'
+  warnings.warn('resource_tracker: %r: %s' % (name, e))
+/sdf/group/lcls/ds/ana/sw/conda1/inst/envs/ana-4.0.65-py3/lib/python3.9/multiprocessing/resource_tracker.py:229: UserWarning: resource_tracker: '/psm_dc89c0ef': [Errno 2] No such file or directory: '/psm_dc89c0ef'
+  warnings.warn('resource_tracker: %r: %s' % (name, e))
+/sdf/group/lcls/ds/ana/sw/conda1/inst/envs/ana-4.0.65-py3/lib/python3.9/multiprocessing/resource_tracker.py:229: UserWarning: resource_tracker: '/psm_9af59287': [Errno 2] No such file or directory: '/psm_9af59287'
+  warnings.warn('resource_tracker: %r: %s' % (name, e))
+/sdf/group/lcls/ds/ana/sw/conda1/inst/envs/ana-4.0.65-py3/lib/python3.9/multiprocessing/resource_tracker.py:229: UserWarning: resource_tracker: '/psm_dac8c319': [Errno 2] No such file or directory: '/psm_dac8c319'
+  warnings.warn('resource_tracker: %r: %s' % (name, e))
+/sdf/group/lcls/ds/ana/sw/conda1/inst/envs/ana-4.0.65-py3/lib/python3.9/multiprocessing/resource_tracker.py:229: UserWarning: resource_tracker: '/psm_46cc3920': [Errno 2] No such file or directory: '/psm_46cc3920'
+  warnings.warn('resource_tracker: %r: %s' % (name, e))
+/sdf/group/lcls/ds/ana/sw/conda1/inst/envs/ana-4.0.65-py3/lib/python3.9/multiprocessing/resource_tracker.py:229: UserWarning: resource_tracker: '/psm_e6e05f96': [Errno 2] No such file or directory: '/psm_e6e05f96'
+  warnings.warn('resource_tracker: %r: %s' % (name, e))
+/sdf/group/lcls/ds/ana/sw/conda1/inst/envs/ana-4.0.65-py3/lib/python3.9/multiprocessing/resource_tracker.py:229: UserWarning: resource_tracker: '/psm_432c48b4': [Errno 2] No such file or directory: '/psm_432c48b4'
+  warnings.warn('resource_tracker: %r: %s' % (name, e))
+/sdf/group/lcls/ds/ana/sw/conda1/inst/envs/ana-4.0.65-py3/lib/python3.9/multiprocessing/resource_tracker.py:229: UserWarning: resource_tracker: '/psm_55b0728f': [Errno 2] No such file or directory: '/psm_55b0728f'
+  warnings.warn('resource_tracker: %r: %s' % (name, e))
+/sdf/group/lcls/ds/ana/sw/conda1/inst/envs/ana-4.0.65-py3/lib/python3.9/multiprocessing/resource_tracker.py:229: UserWarning: resource_tracker: '/psm_1b1d17ad': [Errno 2] No such file or directory: '/psm_1b1d17ad'
+  warnings.warn('resource_tracker: %r: %s' % (name, e))
+/sdf/group/lcls/ds/ana/sw/conda1/inst/envs/ana-4.0.65-py3/lib/python3.9/multiprocessing/resource_tracker.py:229: UserWarning: resource_tracker: '/psm_e00cc6fc': [Errno 2] No such file or directory: '/psm_e00cc6fc'
+  warnings.warn('resource_tracker: %r: %s' % (name, e))
+/sdf/group/lcls/ds/ana/sw/conda1/inst/envs/ana-4.0.65-py3/lib/python3.9/multiprocessing/resource_tracker.py:229: UserWarning: resource_tracker: '/psm_324c4aea': [Errno 2] No such file or directory: '/psm_324c4aea'
+  warnings.warn('resource_tracker: %r: %s' % (name, e))
+/sdf/group/lcls/ds/ana/sw/conda1/inst/envs/ana-4.0.65-py3/lib/python3.9/multiprocessing/resource_tracker.py:229: UserWarning: resource_tracker: '/psm_f214763e': [Errno 2] No such file or directory: '/psm_f214763e'
+  warnings.warn('resource_tracker: %r: %s' % (name, e))
+/sdf/group/lcls/ds/ana/sw/conda1/inst/envs/ana-4.0.65-py3/lib/python3.9/multiprocessing/resource_tracker.py:229: UserWarning: resource_tracker: '/psm_cd69531d': [Errno 2] No such file or directory: '/psm_cd69531d'
+  warnings.warn('resource_tracker: %r: %s' % (name, e))
+/sdf/group/lcls/ds/ana/sw/conda1/inst/envs/ana-4.0.65-py3/lib/python3.9/multiprocessing/resource_tracker.py:229: UserWarning: resource_tracker: '/psm_5d53346e': [Errno 2] No such file or directory: '/psm_5d53346e'
+  warnings.warn('resource_tracker: %r: %s' % (name, e))
+/sdf/group/lcls/ds/ana/sw/conda1/inst/envs/ana-4.0.65-py3/lib/python3.9/multiprocessing/resource_tracker.py:229: UserWarning: resource_tracker: '/psm_b67c1a39': [Errno 2] No such file or directory: '/psm_b67c1a39'
+  warnings.warn('resource_tracker: %r: %s' % (name, e))
+/sdf/group/lcls/ds/ana/sw/conda1/inst/envs/ana-4.0.65-py3/lib/python3.9/multiprocessing/resource_tracker.py:229: UserWarning: resource_tracker: '/psm_5401a6ab': [Errno 2] No such file or directory: '/psm_5401a6ab'
+  warnings.warn('resource_tracker: %r: %s' % (name, e))
+/sdf/group/lcls/ds/ana/sw/conda1/inst/envs/ana-4.0.65-py3/lib/python3.9/multiprocessing/resource_tracker.py:229: UserWarning: resource_tracker: '/psm_8325cb1e': [Errno 2] No such file or directory: '/psm_8325cb1e'
+  warnings.warn('resource_tracker: %r: %s' % (name, e))
+/sdf/group/lcls/ds/ana/sw/conda1/inst/envs/ana-4.0.65-py3/lib/python3.9/multiprocessing/resource_tracker.py:229: UserWarning: resource_tracker: '/psm_3cd44d51': [Errno 2] No such file or directory: '/psm_3cd44d51'
+  warnings.warn('resource_tracker: %r: %s' % (name, e))
+/sdf/group/lcls/ds/ana/sw/conda1/inst/envs/ana-4.0.65-py3/lib/python3.9/multiprocessing/resource_tracker.py:229: UserWarning: resource_tracker: '/psm_bdb93fad': [Errno 2] No such file or directory: '/psm_bdb93fad'
+  warnings.warn('resource_tracker: %r: %s' % (name, e))
+/sdf/group/lcls/ds/ana/sw/conda1/inst/envs/ana-4.0.65-py3/lib/python3.9/multiprocessing/resource_tracker.py:229: UserWarning: resource_tracker: '/psm_511d1af5': [Errno 2] No such file or directory: '/psm_511d1af5'
+  warnings.warn('resource_tracker: %r: %s' % (name, e))
+/sdf/group/lcls/ds/ana/sw/conda1/inst/envs/ana-4.0.65-py3/lib/python3.9/multiprocessing/resource_tracker.py:229: UserWarning: resource_tracker: '/psm_11b94aca': [Errno 2] No such file or directory: '/psm_11b94aca'
+  warnings.warn('resource_tracker: %r: %s' % (name, e))
+/sdf/group/lcls/ds/ana/sw/conda1/inst/envs/ana-4.0.65-py3/lib/python3.9/multiprocessing/resource_tracker.py:229: UserWarning: resource_tracker: '/psm_0ab39d85': [Errno 2] No such file or directory: '/psm_0ab39d85'
+  warnings.warn('resource_tracker: %r: %s' % (name, e))
+/sdf/group/lcls/ds/ana/sw/conda1/inst/envs/ana-4.0.65-py3/lib/python3.9/multiprocessing/resource_tracker.py:229: UserWarning: resource_tracker: '/psm_e2c212e0': [Errno 2] No such file or directory: '/psm_e2c212e0'
+  warnings.warn('resource_tracker: %r: %s' % (name, e))
+/sdf/group/lcls/ds/ana/sw/conda1/inst/envs/ana-4.0.65-py3/lib/python3.9/multiprocessing/resource_tracker.py:229: UserWarning: resource_tracker: '/psm_21e2bcbc': [Errno 2] No such file or directory: '/psm_21e2bcbc'
+  warnings.warn('resource_tracker: %r: %s' % (name, e))
+/sdf/group/lcls/ds/ana/sw/conda1/inst/envs/ana-4.0.65-py3/lib/python3.9/multiprocessing/resource_tracker.py:229: UserWarning: resource_tracker: '/psm_9344db49': [Errno 2] No such file or directory: '/psm_9344db49'
+  warnings.warn('resource_tracker: %r: %s' % (name, e))
+/sdf/group/lcls/ds/ana/sw/conda1/inst/envs/ana-4.0.65-py3/lib/python3.9/multiprocessing/resource_tracker.py:229: UserWarning: resource_tracker: '/psm_f966db9b': [Errno 2] No such file or directory: '/psm_f966db9b'
+  warnings.warn('resource_tracker: %r: %s' % (name, e))
+/sdf/group/lcls/ds/ana/sw/conda1/inst/envs/ana-4.0.65-py3/lib/python3.9/multiprocessing/resource_tracker.py:229: UserWarning: resource_tracker: '/psm_80c594d3': [Errno 2] No such file or directory: '/psm_80c594d3'
+  warnings.warn('resource_tracker: %r: %s' % (name, e))
+/sdf/group/lcls/ds/ana/sw/conda1/inst/envs/ana-4.0.65-py3/lib/python3.9/multiprocessing/resource_tracker.py:229: UserWarning: resource_tracker: '/psm_7f59ba6f': [Errno 2] No such file or directory: '/psm_7f59ba6f'
+  warnings.warn('resource_tracker: %r: %s' % (name, e))
+/sdf/group/lcls/ds/ana/sw/conda1/inst/envs/ana-4.0.65-py3/lib/python3.9/multiprocessing/resource_tracker.py:229: UserWarning: resource_tracker: '/psm_4c090cd0': [Errno 2] No such file or directory: '/psm_4c090cd0'
+  warnings.warn('resource_tracker: %r: %s' % (name, e))
+/sdf/group/lcls/ds/ana/sw/conda1/inst/envs/ana-4.0.65-py3/lib/python3.9/multiprocessing/resource_tracker.py:229: UserWarning: resource_tracker: '/psm_271dc711': [Errno 2] No such file or directory: '/psm_271dc711'
+  warnings.warn('resource_tracker: %r: %s' % (name, e))
+/sdf/group/lcls/ds/ana/sw/conda1/inst/envs/ana-4.0.65-py3/lib/python3.9/multiprocessing/resource_tracker.py:229: UserWarning: resource_tracker: '/psm_c7173459': [Errno 2] No such file or directory: '/psm_c7173459'
+  warnings.warn('resource_tracker: %r: %s' % (name, e))
+/sdf/group/lcls/ds/ana/sw/conda1/inst/envs/ana-4.0.65-py3/lib/python3.9/multiprocessing/resource_tracker.py:229: UserWarning: resource_tracker: '/psm_bda13239': [Errno 2] No such file or directory: '/psm_bda13239'
+  warnings.warn('resource_tracker: %r: %s' % (name, e))
+/sdf/group/lcls/ds/ana/sw/conda1/inst/envs/ana-4.0.65-py3/lib/python3.9/multiprocessing/resource_tracker.py:229: UserWarning: resource_tracker: '/psm_e966c53b': [Errno 2] No such file or directory: '/psm_e966c53b'
+  warnings.warn('resource_tracker: %r: %s' % (name, e))
+/sdf/group/lcls/ds/ana/sw/conda1/inst/envs/ana-4.0.65-py3/lib/python3.9/multiprocessing/resource_tracker.py:229: UserWarning: resource_tracker: '/psm_b13ce066': [Errno 2] No such file or directory: '/psm_b13ce066'
+  warnings.warn('resource_tracker: %r: %s' % (name, e))
+/sdf/group/lcls/ds/ana/sw/conda1/inst/envs/ana-4.0.65-py3/lib/python3.9/multiprocessing/resource_tracker.py:229: UserWarning: resource_tracker: '/psm_55bbf56f': [Errno 2] No such file or directory: '/psm_55bbf56f'
+  warnings.warn('resource_tracker: %r: %s' % (name, e))
+/sdf/group/lcls/ds/ana/sw/conda1/inst/envs/ana-4.0.65-py3/lib/python3.9/multiprocessing/resource_tracker.py:229: UserWarning: resource_tracker: '/psm_b24dbfc5': [Errno 2] No such file or directory: '/psm_b24dbfc5'
+  warnings.warn('resource_tracker: %r: %s' % (name, e))
+/sdf/group/lcls/ds/ana/sw/conda1/inst/envs/ana-4.0.65-py3/lib/python3.9/multiprocessing/resource_tracker.py:229: UserWarning: resource_tracker: '/psm_6abd867c': [Errno 2] No such file or directory: '/psm_6abd867c'
+  warnings.warn('resource_tracker: %r: %s' % (name, e))
+/sdf/group/lcls/ds/ana/sw/conda1/inst/envs/ana-4.0.65-py3/lib/python3.9/multiprocessing/resource_tracker.py:229: UserWarning: resource_tracker: '/psm_5ee9eb12': [Errno 2] No such file or directory: '/psm_5ee9eb12'
+  warnings.warn('resource_tracker: %r: %s' % (name, e))
+/sdf/group/lcls/ds/ana/sw/conda1/inst/envs/ana-4.0.65-py3/lib/python3.9/multiprocessing/resource_tracker.py:229: UserWarning: resource_tracker: '/psm_7139ec36': [Errno 2] No such file or directory: '/psm_7139ec36'
+  warnings.warn('resource_tracker: %r: %s' % (name, e))
+/sdf/group/lcls/ds/ana/sw/conda1/inst/envs/ana-4.0.65-py3/lib/python3.9/multiprocessing/resource_tracker.py:229: UserWarning: resource_tracker: '/psm_7a1bb909': [Errno 2] No such file or directory: '/psm_7a1bb909'
+  warnings.warn('resource_tracker: %r: %s' % (name, e))
+/sdf/group/lcls/ds/ana/sw/conda1/inst/envs/ana-4.0.65-py3/lib/python3.9/multiprocessing/resource_tracker.py:229: UserWarning: resource_tracker: '/psm_b9647cf3': [Errno 2] No such file or directory: '/psm_b9647cf3'
+  warnings.warn('resource_tracker: %r: %s' % (name, e))
+/sdf/group/lcls/ds/ana/sw/conda1/inst/envs/ana-4.0.65-py3/lib/python3.9/multiprocessing/resource_tracker.py:229: UserWarning: resource_tracker: '/psm_c11f6314': [Errno 2] No such file or directory: '/psm_c11f6314'
+  warnings.warn('resource_tracker: %r: %s' % (name, e))
+/sdf/group/lcls/ds/ana/sw/conda1/inst/envs/ana-4.0.65-py3/lib/python3.9/multiprocessing/resource_tracker.py:229: UserWarning: resource_tracker: '/psm_b5822945': [Errno 2] No such file or directory: '/psm_b5822945'
+  warnings.warn('resource_tracker: %r: %s' % (name, e))
+/sdf/group/lcls/ds/ana/sw/conda1/inst/envs/ana-4.0.65-py3/lib/python3.9/multiprocessing/resource_tracker.py:229: UserWarning: resource_tracker: '/psm_dac6664f': [Errno 2] No such file or directory: '/psm_dac6664f'
+  warnings.warn('resource_tracker: %r: %s' % (name, e))
+/sdf/group/lcls/ds/ana/sw/conda1/inst/envs/ana-4.0.65-py3/lib/python3.9/multiprocessing/resource_tracker.py:229: UserWarning: resource_tracker: '/psm_65cf72e7': [Errno 2] No such file or directory: '/psm_65cf72e7'
+  warnings.warn('resource_tracker: %r: %s' % (name, e))
+/sdf/group/lcls/ds/ana/sw/conda1/inst/envs/ana-4.0.65-py3/lib/python3.9/multiprocessing/resource_tracker.py:229: UserWarning: resource_tracker: '/psm_e0869ff4': [Errno 2] No such file or directory: '/psm_e0869ff4'
+  warnings.warn('resource_tracker: %r: %s' % (name, e))
+/sdf/group/lcls/ds/ana/sw/conda1/inst/envs/ana-4.0.65-py3/lib/python3.9/multiprocessing/resource_tracker.py:229: UserWarning: resource_tracker: '/psm_95b1d13f': [Errno 2] No such file or directory: '/psm_95b1d13f'
+  warnings.warn('resource_tracker: %r: %s' % (name, e))
+/sdf/group/lcls/ds/ana/sw/conda1/inst/envs/ana-4.0.65-py3/lib/python3.9/multiprocessing/resource_tracker.py:229: UserWarning: resource_tracker: '/psm_5bd9a929': [Errno 2] No such file or directory: '/psm_5bd9a929'
+  warnings.warn('resource_tracker: %r: %s' % (name, e))
+/sdf/group/lcls/ds/ana/sw/conda1/inst/envs/ana-4.0.65-py3/lib/python3.9/multiprocessing/resource_tracker.py:229: UserWarning: resource_tracker: '/psm_55a3408b': [Errno 2] No such file or directory: '/psm_55a3408b'
+  warnings.warn('resource_tracker: %r: %s' % (name, e))
+/sdf/group/lcls/ds/ana/sw/conda1/inst/envs/ana-4.0.65-py3/lib/python3.9/multiprocessing/resource_tracker.py:229: UserWarning: resource_tracker: '/psm_06aea9e5': [Errno 2] No such file or directory: '/psm_06aea9e5'
+  warnings.warn('resource_tracker: %r: %s' % (name, e))
+/sdf/group/lcls/ds/ana/sw/conda1/inst/envs/ana-4.0.65-py3/lib/python3.9/multiprocessing/resource_tracker.py:229: UserWarning: resource_tracker: '/psm_875452d8': [Errno 2] No such file or directory: '/psm_875452d8'
+  warnings.warn('resource_tracker: %r: %s' % (name, e))
+/sdf/group/lcls/ds/ana/sw/conda1/inst/envs/ana-4.0.65-py3/lib/python3.9/multiprocessing/resource_tracker.py:229: UserWarning: resource_tracker: '/psm_e9171ccc': [Errno 2] No such file or directory: '/psm_e9171ccc'
+  warnings.warn('resource_tracker: %r: %s' % (name, e))
+/sdf/group/lcls/ds/ana/sw/conda1/inst/envs/ana-4.0.65-py3/lib/python3.9/multiprocessing/resource_tracker.py:229: UserWarning: resource_tracker: '/psm_95cbba0d': [Errno 2] No such file or directory: '/psm_95cbba0d'
+  warnings.warn('resource_tracker: %r: %s' % (name, e))
+/sdf/group/lcls/ds/ana/sw/conda1/inst/envs/ana-4.0.65-py3/lib/python3.9/multiprocessing/resource_tracker.py:229: UserWarning: resource_tracker: '/psm_c41ca1e0': [Errno 2] No such file or directory: '/psm_c41ca1e0'
+  warnings.warn('resource_tracker: %r: %s' % (name, e))
+/sdf/group/lcls/ds/ana/sw/conda1/inst/envs/ana-4.0.65-py3/lib/python3.9/multiprocessing/resource_tracker.py:229: UserWarning: resource_tracker: '/psm_0f2f621b': [Errno 2] No such file or directory: '/psm_0f2f621b'
+  warnings.warn('resource_tracker: %r: %s' % (name, e))
+/sdf/group/lcls/ds/ana/sw/conda1/inst/envs/ana-4.0.65-py3/lib/python3.9/multiprocessing/resource_tracker.py:229: UserWarning: resource_tracker: '/psm_8c751ea1': [Errno 2] No such file or directory: '/psm_8c751ea1'
+  warnings.warn('resource_tracker: %r: %s' % (name, e))
+/sdf/group/lcls/ds/ana/sw/conda1/inst/envs/ana-4.0.65-py3/lib/python3.9/multiprocessing/resource_tracker.py:229: UserWarning: resource_tracker: '/psm_ae2a1f82': [Errno 2] No such file or directory: '/psm_ae2a1f82'
+  warnings.warn('resource_tracker: %r: %s' % (name, e))
+/sdf/group/lcls/ds/ana/sw/conda1/inst/envs/ana-4.0.65-py3/lib/python3.9/multiprocessing/resource_tracker.py:229: UserWarning: resource_tracker: '/psm_747f9203': [Errno 2] No such file or directory: '/psm_747f9203'
+  warnings.warn('resource_tracker: %r: %s' % (name, e))
+/sdf/group/lcls/ds/ana/sw/conda1/inst/envs/ana-4.0.65-py3/lib/python3.9/multiprocessing/resource_tracker.py:229: UserWarning: resource_tracker: '/psm_02a915b4': [Errno 2] No such file or directory: '/psm_02a915b4'
+  warnings.warn('resource_tracker: %r: %s' % (name, e))
+/sdf/group/lcls/ds/ana/sw/conda1/inst/envs/ana-4.0.65-py3/lib/python3.9/multiprocessing/resource_tracker.py:229: UserWarning: resource_tracker: '/psm_ecebf4ca': [Errno 2] No such file or directory: '/psm_ecebf4ca'
+  warnings.warn('resource_tracker: %r: %s' % (name, e))
+/sdf/group/lcls/ds/ana/sw/conda1/inst/envs/ana-4.0.65-py3/lib/python3.9/multiprocessing/resource_tracker.py:229: UserWarning: resource_tracker: '/psm_87246938': [Errno 2] No such file or directory: '/psm_87246938'
+  warnings.warn('resource_tracker: %r: %s' % (name, e))
+/sdf/group/lcls/ds/ana/sw/conda1/inst/envs/ana-4.0.65-py3/lib/python3.9/multiprocessing/resource_tracker.py:229: UserWarning: resource_tracker: '/psm_d24a405c': [Errno 2] No such file or directory: '/psm_d24a405c'
+  warnings.warn('resource_tracker: %r: %s' % (name, e))
+/sdf/group/lcls/ds/ana/sw/conda1/inst/envs/ana-4.0.65-py3/lib/python3.9/multiprocessing/resource_tracker.py:229: UserWarning: resource_tracker: '/psm_a394107a': [Errno 2] No such file or directory: '/psm_a394107a'
+  warnings.warn('resource_tracker: %r: %s' % (name, e))
+/sdf/group/lcls/ds/ana/sw/conda1/inst/envs/ana-4.0.65-py3/lib/python3.9/multiprocessing/resource_tracker.py:229: UserWarning: resource_tracker: '/psm_7184bb70': [Errno 2] No such file or directory: '/psm_7184bb70'
+  warnings.warn('resource_tracker: %r: %s' % (name, e))
+/sdf/group/lcls/ds/ana/sw/conda1/inst/envs/ana-4.0.65-py3/lib/python3.9/multiprocessing/resource_tracker.py:229: UserWarning: resource_tracker: '/psm_ffd68f00': [Errno 2] No such file or directory: '/psm_ffd68f00'
+  warnings.warn('resource_tracker: %r: %s' % (name, e))
+/sdf/group/lcls/ds/ana/sw/conda1/inst/envs/ana-4.0.65-py3/lib/python3.9/multiprocessing/resource_tracker.py:229: UserWarning: resource_tracker: '/psm_05d1d267': [Errno 2] No such file or directory: '/psm_05d1d267'
+  warnings.warn('resource_tracker: %r: %s' % (name, e))
+/sdf/group/lcls/ds/ana/sw/conda1/inst/envs/ana-4.0.65-py3/lib/python3.9/multiprocessing/resource_tracker.py:229: UserWarning: resource_tracker: '/psm_4786ad12': [Errno 2] No such file or directory: '/psm_4786ad12'
+  warnings.warn('resource_tracker: %r: %s' % (name, e))
+/sdf/group/lcls/ds/ana/sw/conda1/inst/envs/ana-4.0.65-py3/lib/python3.9/multiprocessing/resource_tracker.py:229: UserWarning: resource_tracker: '/psm_2ed2be20': [Errno 2] No such file or directory: '/psm_2ed2be20'
+  warnings.warn('resource_tracker: %r: %s' % (name, e))
+/sdf/group/lcls/ds/ana/sw/conda1/inst/envs/ana-4.0.65-py3/lib/python3.9/multiprocessing/resource_tracker.py:229: UserWarning: resource_tracker: '/psm_a11d115b': [Errno 2] No such file or directory: '/psm_a11d115b'
+  warnings.warn('resource_tracker: %r: %s' % (name, e))
+/sdf/group/lcls/ds/ana/sw/conda1/inst/envs/ana-4.0.65-py3/lib/python3.9/multiprocessing/resource_tracker.py:229: UserWarning: resource_tracker: '/psm_b916f5f8': [Errno 2] No such file or directory: '/psm_b916f5f8'
+  warnings.warn('resource_tracker: %r: %s' % (name, e))
+/sdf/group/lcls/ds/ana/sw/conda1/inst/envs/ana-4.0.65-py3/lib/python3.9/multiprocessing/resource_tracker.py:229: UserWarning: resource_tracker: '/psm_8c026731': [Errno 2] No such file or directory: '/psm_8c026731'
+  warnings.warn('resource_tracker: %r: %s' % (name, e))
+/sdf/group/lcls/ds/ana/sw/conda1/inst/envs/ana-4.0.65-py3/lib/python3.9/multiprocessing/resource_tracker.py:229: UserWarning: resource_tracker: '/psm_e4305f60': [Errno 2] No such file or directory: '/psm_e4305f60'
+  warnings.warn('resource_tracker: %r: %s' % (name, e))
+/sdf/group/lcls/ds/ana/sw/conda1/inst/envs/ana-4.0.65-py3/lib/python3.9/multiprocessing/resource_tracker.py:229: UserWarning: resource_tracker: '/psm_9e4aabd9': [Errno 2] No such file or directory: '/psm_9e4aabd9'
+  warnings.warn('resource_tracker: %r: %s' % (name, e))
+/sdf/group/lcls/ds/ana/sw/conda1/inst/envs/ana-4.0.65-py3/lib/python3.9/multiprocessing/resource_tracker.py:229: UserWarning: resource_tracker: '/psm_702e3025': [Errno 2] No such file or directory: '/psm_702e3025'
+  warnings.warn('resource_tracker: %r: %s' % (name, e))
+/sdf/group/lcls/ds/ana/sw/conda1/inst/envs/ana-4.0.65-py3/lib/python3.9/multiprocessing/resource_tracker.py:229: UserWarning: resource_tracker: '/psm_4ac79081': [Errno 2] No such file or directory: '/psm_4ac79081'
+  warnings.warn('resource_tracker: %r: %s' % (name, e))
+/sdf/group/lcls/ds/ana/sw/conda1/inst/envs/ana-4.0.65-py3/lib/python3.9/multiprocessing/resource_tracker.py:229: UserWarning: resource_tracker: '/psm_ab9877eb': [Errno 2] No such file or directory: '/psm_ab9877eb'
+  warnings.warn('resource_tracker: %r: %s' % (name, e))
+/sdf/group/lcls/ds/ana/sw/conda1/inst/envs/ana-4.0.65-py3/lib/python3.9/multiprocessing/resource_tracker.py:229: UserWarning: resource_tracker: '/psm_85502906': [Errno 2] No such file or directory: '/psm_85502906'
+  warnings.warn('resource_tracker: %r: %s' % (name, e))
+/sdf/group/lcls/ds/ana/sw/conda1/inst/envs/ana-4.0.65-py3/lib/python3.9/multiprocessing/resource_tracker.py:229: UserWarning: resource_tracker: '/psm_ba49737c': [Errno 2] No such file or directory: '/psm_ba49737c'
+  warnings.warn('resource_tracker: %r: %s' % (name, e))
+/sdf/group/lcls/ds/ana/sw/conda1/inst/envs/ana-4.0.65-py3/lib/python3.9/multiprocessing/resource_tracker.py:229: UserWarning: resource_tracker: '/psm_0c39118e': [Errno 2] No such file or directory: '/psm_0c39118e'
+  warnings.warn('resource_tracker: %r: %s' % (name, e))
+/sdf/group/lcls/ds/ana/sw/conda1/inst/envs/ana-4.0.65-py3/lib/python3.9/multiprocessing/resource_tracker.py:229: UserWarning: resource_tracker: '/psm_c4ef8650': [Errno 2] No such file or directory: '/psm_c4ef8650'
+  warnings.warn('resource_tracker: %r: %s' % (name, e))
+/sdf/group/lcls/ds/ana/sw/conda1/inst/envs/ana-4.0.65-py3/lib/python3.9/multiprocessing/resource_tracker.py:229: UserWarning: resource_tracker: '/psm_aa74c9a1': [Errno 2] No such file or directory: '/psm_aa74c9a1'
+  warnings.warn('resource_tracker: %r: %s' % (name, e))
+/sdf/group/lcls/ds/ana/sw/conda1/inst/envs/ana-4.0.65-py3/lib/python3.9/multiprocessing/resource_tracker.py:229: UserWarning: resource_tracker: '/psm_f1ffaa66': [Errno 2] No such file or directory: '/psm_f1ffaa66'
+  warnings.warn('resource_tracker: %r: %s' % (name, e))
+/sdf/group/lcls/ds/ana/sw/conda1/inst/envs/ana-4.0.65-py3/lib/python3.9/multiprocessing/resource_tracker.py:229: UserWarning: resource_tracker: '/psm_a8054e22': [Errno 2] No such file or directory: '/psm_a8054e22'
+  warnings.warn('resource_tracker: %r: %s' % (name, e))
+/sdf/group/lcls/ds/ana/sw/conda1/inst/envs/ana-4.0.65-py3/lib/python3.9/multiprocessing/resource_tracker.py:229: UserWarning: resource_tracker: '/psm_3c0bdeab': [Errno 2] No such file or directory: '/psm_3c0bdeab'
+  warnings.warn('resource_tracker: %r: %s' % (name, e))
+/sdf/group/lcls/ds/ana/sw/conda1/inst/envs/ana-4.0.65-py3/lib/python3.9/multiprocessing/resource_tracker.py:229: UserWarning: resource_tracker: '/psm_ec3f2860': [Errno 2] No such file or directory: '/psm_ec3f2860'
+  warnings.warn('resource_tracker: %r: %s' % (name, e))
+/sdf/group/lcls/ds/ana/sw/conda1/inst/envs/ana-4.0.65-py3/lib/python3.9/multiprocessing/resource_tracker.py:229: UserWarning: resource_tracker: '/psm_38846046': [Errno 2] No such file or directory: '/psm_38846046'
+  warnings.warn('resource_tracker: %r: %s' % (name, e))
+/sdf/group/lcls/ds/ana/sw/conda1/inst/envs/ana-4.0.65-py3/lib/python3.9/multiprocessing/resource_tracker.py:229: UserWarning: resource_tracker: '/psm_247c13fd': [Errno 2] No such file or directory: '/psm_247c13fd'
+  warnings.warn('resource_tracker: %r: %s' % (name, e))
+/sdf/group/lcls/ds/ana/sw/conda1/inst/envs/ana-4.0.65-py3/lib/python3.9/multiprocessing/resource_tracker.py:229: UserWarning: resource_tracker: '/psm_d83d1d42': [Errno 2] No such file or directory: '/psm_d83d1d42'
+  warnings.warn('resource_tracker: %r: %s' % (name, e))
+/sdf/group/lcls/ds/ana/sw/conda1/inst/envs/ana-4.0.65-py3/lib/python3.9/multiprocessing/resource_tracker.py:229: UserWarning: resource_tracker: '/psm_f5bde534': [Errno 2] No such file or directory: '/psm_f5bde534'
+  warnings.warn('resource_tracker: %r: %s' % (name, e))
+/sdf/group/lcls/ds/ana/sw/conda1/inst/envs/ana-4.0.65-py3/lib/python3.9/multiprocessing/resource_tracker.py:229: UserWarning: resource_tracker: '/psm_acfd29f8': [Errno 2] No such file or directory: '/psm_acfd29f8'
+  warnings.warn('resource_tracker: %r: %s' % (name, e))
+/sdf/group/lcls/ds/ana/sw/conda1/inst/envs/ana-4.0.65-py3/lib/python3.9/multiprocessing/resource_tracker.py:229: UserWarning: resource_tracker: '/psm_47452669': [Errno 2] No such file or directory: '/psm_47452669'
+  warnings.warn('resource_tracker: %r: %s' % (name, e))
+/sdf/group/lcls/ds/ana/sw/conda1/inst/envs/ana-4.0.65-py3/lib/python3.9/multiprocessing/resource_tracker.py:229: UserWarning: resource_tracker: '/psm_73b12559': [Errno 2] No such file or directory: '/psm_73b12559'
+  warnings.warn('resource_tracker: %r: %s' % (name, e))
+/sdf/group/lcls/ds/ana/sw/conda1/inst/envs/ana-4.0.65-py3/lib/python3.9/multiprocessing/resource_tracker.py:229: UserWarning: resource_tracker: '/psm_a877c851': [Errno 2] No such file or directory: '/psm_a877c851'
+  warnings.warn('resource_tracker: %r: %s' % (name, e))
+/sdf/group/lcls/ds/ana/sw/conda1/inst/envs/ana-4.0.65-py3/lib/python3.9/multiprocessing/resource_tracker.py:229: UserWarning: resource_tracker: '/psm_23fb27f9': [Errno 2] No such file or directory: '/psm_23fb27f9'
+  warnings.warn('resource_tracker: %r: %s' % (name, e))
+/sdf/group/lcls/ds/ana/sw/conda1/inst/envs/ana-4.0.65-py3/lib/python3.9/multiprocessing/resource_tracker.py:229: UserWarning: resource_tracker: '/psm_1954622a': [Errno 2] No such file or directory: '/psm_1954622a'
+  warnings.warn('resource_tracker: %r: %s' % (name, e))
+/sdf/group/lcls/ds/ana/sw/conda1/inst/envs/ana-4.0.65-py3/lib/python3.9/multiprocessing/resource_tracker.py:229: UserWarning: resource_tracker: '/psm_9df5fe20': [Errno 2] No such file or directory: '/psm_9df5fe20'
+  warnings.warn('resource_tracker: %r: %s' % (name, e))
+/sdf/group/lcls/ds/ana/sw/conda1/inst/envs/ana-4.0.65-py3/lib/python3.9/multiprocessing/resource_tracker.py:229: UserWarning: resource_tracker: '/psm_0a691d1a': [Errno 2] No such file or directory: '/psm_0a691d1a'
+  warnings.warn('resource_tracker: %r: %s' % (name, e))
+/sdf/group/lcls/ds/ana/sw/conda1/inst/envs/ana-4.0.65-py3/lib/python3.9/multiprocessing/resource_tracker.py:229: UserWarning: resource_tracker: '/psm_b5428856': [Errno 2] No such file or directory: '/psm_b5428856'
+  warnings.warn('resource_tracker: %r: %s' % (name, e))
+/sdf/group/lcls/ds/ana/sw/conda1/inst/envs/ana-4.0.65-py3/lib/python3.9/multiprocessing/resource_tracker.py:229: UserWarning: resource_tracker: '/psm_d9edb489': [Errno 2] No such file or directory: '/psm_d9edb489'
+  warnings.warn('resource_tracker: %r: %s' % (name, e))
+/sdf/group/lcls/ds/ana/sw/conda1/inst/envs/ana-4.0.65-py3/lib/python3.9/multiprocessing/resource_tracker.py:229: UserWarning: resource_tracker: '/psm_ba3ec199': [Errno 2] No such file or directory: '/psm_ba3ec199'
+  warnings.warn('resource_tracker: %r: %s' % (name, e))
+/sdf/group/lcls/ds/ana/sw/conda1/inst/envs/ana-4.0.65-py3/lib/python3.9/multiprocessing/resource_tracker.py:229: UserWarning: resource_tracker: '/psm_2e662d0a': [Errno 2] No such file or directory: '/psm_2e662d0a'
+  warnings.warn('resource_tracker: %r: %s' % (name, e))
+/sdf/group/lcls/ds/ana/sw/conda1/inst/envs/ana-4.0.65-py3/lib/python3.9/multiprocessing/resource_tracker.py:229: UserWarning: resource_tracker: '/psm_a3959ca7': [Errno 2] No such file or directory: '/psm_a3959ca7'
+  warnings.warn('resource_tracker: %r: %s' % (name, e))
+/sdf/group/lcls/ds/ana/sw/conda1/inst/envs/ana-4.0.65-py3/lib/python3.9/multiprocessing/resource_tracker.py:229: UserWarning: resource_tracker: '/psm_1b18726a': [Errno 2] No such file or directory: '/psm_1b18726a'
+  warnings.warn('resource_tracker: %r: %s' % (name, e))
+/sdf/group/lcls/ds/ana/sw/conda1/inst/envs/ana-4.0.65-py3/lib/python3.9/multiprocessing/resource_tracker.py:229: UserWarning: resource_tracker: '/psm_307ca5f4': [Errno 2] No such file or directory: '/psm_307ca5f4'
+  warnings.warn('resource_tracker: %r: %s' % (name, e))
+/sdf/group/lcls/ds/ana/sw/conda1/inst/envs/ana-4.0.65-py3/lib/python3.9/multiprocessing/resource_tracker.py:229: UserWarning: resource_tracker: '/psm_8ca5f2c6': [Errno 2] No such file or directory: '/psm_8ca5f2c6'
+  warnings.warn('resource_tracker: %r: %s' % (name, e))
+/sdf/group/lcls/ds/ana/sw/conda1/inst/envs/ana-4.0.65-py3/lib/python3.9/multiprocessing/resource_tracker.py:229: UserWarning: resource_tracker: '/psm_52b84e32': [Errno 2] No such file or directory: '/psm_52b84e32'
+  warnings.warn('resource_tracker: %r: %s' % (name, e))
+/sdf/group/lcls/ds/ana/sw/conda1/inst/envs/ana-4.0.65-py3/lib/python3.9/multiprocessing/resource_tracker.py:229: UserWarning: resource_tracker: '/psm_216bd620': [Errno 2] No such file or directory: '/psm_216bd620'
+  warnings.warn('resource_tracker: %r: %s' % (name, e))
+/sdf/group/lcls/ds/ana/sw/conda1/inst/envs/ana-4.0.65-py3/lib/python3.9/multiprocessing/resource_tracker.py:229: UserWarning: resource_tracker: '/psm_d026746a': [Errno 2] No such file or directory: '/psm_d026746a'
+  warnings.warn('resource_tracker: %r: %s' % (name, e))
