@@ -196,8 +196,7 @@ sbatch << EOF
 
 ${SBATCH_CMD_ACCOUNT}
 #SBATCH -p ${QUEUE}
-#SBATCH -t ${TIME_LIMIT:-10:00:00}  # Default to 10 hours if not provided
-#SBATCH --exclusive
+#SBATCH -t ${TIME_LIMIT:-20:00:00}  # Default to 20 hours if not provided
 #SBATCH --job-name ${TASK}
 #SBATCH --ntasks=${CORES}
 ${SBATCH_CMD_RESERVATION}
@@ -227,5 +226,4 @@ fi
 EOF
 
 echo "Job sent to queue"
-echo $PYTHONPATH
 
