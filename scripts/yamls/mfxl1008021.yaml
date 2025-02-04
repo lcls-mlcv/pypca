@@ -1,0 +1,45 @@
+setup:
+  exp: 'mfxl1008021'
+  det_type: 'Rayonix'
+  root_dir: '/sdf/home/n/nathfrn/pypca'
+  log_dir: '/sdf/home/n/nathfrn/pypca/scripts/logs'
+  account: 'lcls'
+  
+dim_reduc:
+  filename: '/sdf/data/lcls/ds/mfx/mfxl1008021/scratch/nathfrn/pypca_models/pypca_model_91_2000_1000_500.h5'
+  num_images: 2000
+  num_gpus: 1
+  start_run: 91
+  max_run: 92
+  loading_batch_size: 1000
+  threshold: 0.99
+  num_tries: 100
+  grid_size: 25
+  guiding_panel: 2
+  type_of_embedding: 'umap'
+  first_rank: 0
+  
+fit:
+  start_run: 16
+  max_run: 16
+  start_offset: 0
+  num_images: -1
+  batch_size: 50
+  loading_batch_size: 2000
+  num_components: 20
+  model_path: '/sdf/data/lcls/ds/mfx/mfxl1008021/scratch/nathfrn/pypca_models/'
+  num_gpus: 4
+  num_nodes: 4
+  lower_bound: -1
+  upper_bound: -1
+  
+transform:
+  start_run: 21
+  max_run: 22
+  start_offset: 0
+  num_images: -1
+  batch_size: 50
+  loading_batch_size: 2000
+  model: '/sdf/data/lcls/ds/mfx/mfxl1008021/scratch/nathfrn/pypca_models/pypca_model_21_22_-1_20_50.h5'
+  num_gpus: 4
+  num_nodes: 4

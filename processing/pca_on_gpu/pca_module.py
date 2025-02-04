@@ -10,6 +10,7 @@ import torch.distributed as dist
 import logging
 import subprocess
 import gc
+import numpy as np
 
 class IncrementalPCAonGPU():
     """
@@ -202,7 +203,7 @@ class IncrementalPCAonGPU():
             self.n_components_ = min(n_samples, n_features)
 
         col_mean, col_var, n_total_samples = self._incremental_mean_and_var(
-            X, self.mean_, self.var_, torch.tensor([self.n_samples_seen_], device=self.device)
+            X, self.mean_, self.var_, torch.tensor(np.array([self.n_samples_seen_]), device=self.device)
         )
         
         # Whitening

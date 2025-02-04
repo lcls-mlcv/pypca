@@ -1,59 +1,45 @@
 setup:
-  queue: 'milano'
-  root_dir: '/sdf/data/lcls/ds/mfx/mfxp23120/scratch/test_btx'
   exp: 'mfxp23120'
-  run: 5
   det_type: 'epix10k2M'
-  cell: ''
-  account: 'lcls:mfxp23120'
-
-t_sne:
-  filename: '/sdf/data/lcls/ds/mfx/mfxp23120/scratch/test_btx/pipca/pypca_model_1000_1000_100_n4.h5'
-  num_images: 1000
+  root_dir: '/sdf/home/n/nathfrn/pypca'
+  log_dir: '/sdf/home/n/nathfrn/pypca/scripts/logs'
+  account: 'lcls'
+  
+dim_reduc:
+  filename: '/sdf/data/lcls/ds/mfx/mfxp23120/scratch/nathfrn/pypca_models/pypca_model_91_2000_1000_500.h5'
+  num_images: 2000
   num_gpus: 4
-  run: 91
-  loading_batch_size: 2500
+  start_run: 91
+  max_run: 92
+  loading_batch_size: 1000
   threshold: 0.99
-  num_tries: 500
-  grid_size: 25
-  guiding_panel: 5
+  num_tries: 100
+  grid_size: 40
+  guiding_panel: 2
   type_of_embedding: 'umap'
+  first_rank: 1
   
-create_pypca_multinodes:
+fit:
+  start_run: 91
+  max_run: 92
   start_offset: 0
-  num_images: 1000
-  run: 91
+  num_images: -1
   batch_size: 100
   loading_batch_size: 2500
-  num_components: 1000
-  overwrite: True
-  path: '/sdf/data/lcls/ds/mfx/mfxp23120/scratch/test_btx/pipca/'
-  tag: '1000_1000_100_n4'
-  training_percentage: 1
-  smoothing_function: "id"
+  num_components: 1
+  model_path: '/sdf/data/lcls/ds/mfx/mfxp23120/scratch/nathfrn/pypca_models/'
   num_gpus: 4
-  compute_loss: 0
-  compute_projected_images: 0
   num_nodes: 4
-  
-update_pypca_multinodes:
-  run: 92
-  start_offset: 0
-  num_images: 500
-  loading_batch_size: 250
-  batch_size: 100
   lower_bound: -1
   upper_bound: -1
-  model: '/sdf/data/lcls/ds/mfx/mfxp23120/scratch/test_btx/pipca/pypca_model_1000_500_500_n4.h5'
-  num_gpus: 4
-  num_nodes: 4
   
-reduce_pypca_multinodes:
-  run: 91
+transform:
+  start_run: 91
+  max_run: 92
   start_offset: 0
-  num_images: 2000
-  loading_batch_size: 500
+  num_images: -1
   batch_size: 500
-  model: '/sdf/data/lcls/ds/mfx/mfxp23120/scratch/test_btx/pipca/pypca_model_2000_2000_500_n4.h5'
+  loading_batch_size: 1000
+  model: '/sdf/data/lcls/ds/mfx/mfxp23120/scratch/nathfrn/pypca_models/pypca_model_91_-1_2000_500.h5'
   num_gpus: 4
   num_nodes: 4
