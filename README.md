@@ -114,6 +114,11 @@ Where:
 - **guiding_panel**: Which "panel" will be used for dimensionality reduction
 - **first_rank**: Default 0 but can be increased in case the first PCA components do not want to be taken into account.
 
+#### NB: File tagging
+
+- **pypca_models**: the tagging will be the following : `pypca_model_{start_run}_{max_run}_{num_images}_{num_components}_{batch_size}.h5`. Replace the curly-braced placeholders (`{}`) with their corresponding values
+- **projections**: the tagging will be the following : `projections_{start_run}_{max_run}_{num_images}_{num_components}.h5`. Replace the curly-braced placeholders (`{}`) with their corresponding values
+  
 ---
 
 ## Examples
