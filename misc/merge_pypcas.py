@@ -15,10 +15,10 @@ def fuse_results(path,tag,num_nodes,mode='fit'):
         
         fused_data['projected_images'] = np.concatenate([data['projected_images'] for data in all_data], axis=0)
 
-        fused_data['fiducials'] = np.concatenate([data['fiducials'] for data in all_data], axis=0)
-        fused_data['seconds'] = np.concatenate([data['seconds'] for data in all_data], axis=0)
-        fused_data['nanoseconds'] = np.concatenate([data['nanoseconds'] for data in all_data], axis=0)
-        fused_data['times'] = np.concatenate([data['times'] for data in all_data], axis=0)
+        fused_data['fiducials'] = all_data[0]['fiducials'] #np.concatenate([data['fiducials'] for data in all_data], axis=0)
+        fused_data['seconds'] =  all_data[0]['seconds'] #np.concatenate([data['seconds'] for data in all_data], axis=0)
+        fused_data['nanoseconds'] =  all_data[0]['nanoseconds'] #np.concatenate([data['nanoseconds'] for data in all_data], axis=0)
+        fused_data['times'] =  all_data[0]['times'] #np.concatenate([data['times'] for data in all_data], axis=0)
         fused_data['exp'] = all_data[0]['exp']
         fused_data['run'] = all_data[0]['run']
         fused_data['num_runs'] = all_data[0]['num_runs']
@@ -160,12 +160,12 @@ def merge_pypcas(path, tag, num_nodes, mode='fit', overwrite=False):
     time1 = time.time()
     fused_data = fuse_results(path, tag, num_nodes,mode)
     time2 = time.time()
+    print(f"Time to fuse: {time2-time1}",flush=True)
     write_fused_data(fused_data, path, tag, mode, overwrite = overwrite)
     time3 = time.time()
+    print(f"Time to write: {time3-time2}",flush=True)
     delete_node_models(path, tag, num_nodes,mode)
     time4 = time.time()
-    print(f"Time to fuse: {time2-time1}")
-    print(f"Time to write: {time3-time2}")
-    print(f"Time to delete: {time4-time3}")
-    print(f"Total cleaning time: {time4-time1}")
+    print(f"Time to delete: {time4-time3}",flush=True)
+    print(f"Total cleaning time: {time4-time1}",flush=True)
 

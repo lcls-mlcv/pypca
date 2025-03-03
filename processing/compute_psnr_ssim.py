@@ -19,6 +19,9 @@ import h5py
 from itertools import chain
 from torch.utils.data import Dataset
 from torch.utils.data import DataLoader
+import pickle
+from skimage.metrics import peak_signal_noise_ratio as psnr
+from skimage.metrics import structural_similarity as ssim
 
 class IPCRemotePsanaDataset(Dataset):
     def __init__(self, server_address, requests_list):
@@ -52,17 +55,12 @@ class IPCRemotePsanaDataset(Dataset):
             shm_name = response_json['name']
             shape = response_json['shape']
             dtype = np.dtype(response_json['dtype'])
-            fiducial = int(response_json['fiducial'])
-            time = int(response_json['time'])
-            nanoseconds = int(response_json['nanoseconds'])
-            seconds = int(response_json['seconds'])
-            
             shm = None
             try:
                 # Access shared memory
                 shm = shared_memory.SharedMemory(name=shm_name)
                 data_array = np.ndarray(shape, dtype=dtype, buffer=shm.buf)
-                result = [np.array(data_array), fiducial, time, nanoseconds, seconds]
+                result = np.array(data_array)
             finally:
                 if shm:
                     shm.close()
@@ -104,33 +102,83 @@ def create_shared_images(images):
         shm_list.append(shm)
     return shm_list
 
-def read_model_file(filename, id_current_node=0, num_gpus=4):
-    """Read PiPCA model information from h5 file."""
-    data = {}
-    with h5py.File(filename, 'r') as f:
-        data['V'] = np.asarray(f.get('V'))[id_current_node*num_gpus:(id_current_node+1)*num_gpus]
-        data['mu'] = np.asarray(f.get('mu'))[id_current_node*num_gpus:(id_current_node+1)*num_gpus]
-    return data
+def reconstruct_and_compute_metrics(model, projections_filename, device_list, idx_list, max_compo_list, rank, shm_list, shape, dtype):
 
-def reduce_images(V, mu, batch_size, device_list, rank, shm_list, shape, dtype):
-    """Reduce images using the iPCA model."""
-    device = device_list[rank]
-    V = torch.tensor(V[rank], device=device)
-    mu = torch.tensor(mu[rank], device=device)
-    
+    device=device_list[rank]
+     # Access shared memory
     existing_shm = shared_memory.SharedMemory(name=shm_list[rank].name)
-    images = np.ndarray(shape, dtype=dtype, buffer=existing_shm.buf)
+    og_imgs = np.ndarray(shape, dtype=dtype, buffer=existing_shm.buf)
+
+    # Move original images to GPU
+    og_imgs = torch.tensor(og_imgs, device=device)
     
-    transformed_images = []
-    for start in range(0, images.shape[0], batch_size):
-        end = min(start + batch_size, images.shape[0])
-        batch = images[start:end]
-        batch = torch.tensor(batch.reshape(end-start, -1), device=device)
-        transformed_batch = torch.mm((batch - mu).float(), V.float())
-        transformed_images.append(transformed_batch)
+    # Open the HDF5 files using h5py
+    with h5py.File(model, 'r') as f_model, h5py.File(projections_filename, 'r') as f_proj:
+        # Load the mean vector
+        mu = torch.tensor(f_model['mu'][:], device=device)
+
+        # Get dataset shapes for V and U
+        V_shape = f_model['V'].shape
+
+        # Sort the list of max components and ensure uniqueness
+        max_compo_list = sorted(set(max_compo_list))
+        num_images = len(idx_list)  # Number of images to reconstruct at once
+        # Initialize the dictionary to hold metrics
+        psnr_scores_dict, ssim_scores_dict = {max_compo: [] for max_compo in max_compo_list}, {max_compo: [] for max_compo in max_compo_list}
+        
+        # Iterate over each range of components in max_compo_list
+        start_compo = 0
+        rec_img_current = torch.zeros((num_images, V_shape[0], V_shape[1]), device=device)
+        for max_compo in max_compo_list:
+            for compo in range(start_compo, max_compo, 50):
+                end = min(compo + 50, max_compo)
+
+                # Process all indices at the same time for the current range of components
+                for r in range(V_shape[0]):
+                    # Load chunks of U and V from the HDF5 file in parallel across all idx_list
+                    U_chunk = torch.tensor(f_proj['projected_images'][r, idx_list, compo:end], device=device)
+                    V_chunk = torch.tensor(f_model['V'][r, :, compo:end], device=device)
+                    # Update the reconstructed image for this component range
+                    rec_img_current[:,r,:] += torch.matmul(U_chunk, V_chunk.T)
+
+                    # Clean GPU memory for U_chunk and V_chunk
+                    del U_chunk, V_chunk
+                    torch.cuda.empty_cache()
+
+            # Add the mean vector and save the current reconstruction state
+            rec_img_dummy = torch.stack([rec_img_current[:, r, :] + mu[r] for r in range(V_shape[0])], dim=1)
+            start_compo = max_compo
+            
+            torch.cuda.empty_cache()
+            if rank == 0:
+                print(f"Reconstructed images with {max_compo} number of components", flush=True)
+
+            rec_img_dummy = rec_img_dummy.reshape(og_imgs.shape)
+
+            psnr_scores, ssim_scores = [], []
+            for img_orig, img_comp in zip(og_imgs, rec_img_dummy):
+                # Ensure images are in range [0, 1] if needed
+                data_range = img_orig.max() - img_orig.min()
     
-    transformed_images = torch.cat(transformed_images, dim=0)
-    return transformed_images.cpu().numpy()
+                # PSNR computation
+                mse = torch.mean((img_orig - img_comp) ** 2)
+                psnr_val = 20 * torch.log10(data_range / torch.sqrt(mse)).item()
+                psnr_scores.append(psnr_val)
+    
+                # SSIM computation (use skimage for SSIM as PyTorch lacks built-in support)
+                img_orig_cpu = img_orig.detach().cpu().numpy()
+                img_comp_cpu = img_comp.detach().cpu().numpy()
+                ssim_val = ssim(img_orig_cpu, img_comp_cpu, multichannel=True, data_range=data_range.item())
+                ssim_scores.append(ssim_val)
+
+            # Store scores in dictionaries
+            psnr_scores_dict[max_compo] = psnr_scores
+            ssim_scores_dict[max_compo] = ssim_scores
+            
+            if rank == 0:
+                print(f"Computed metric with {max_compo} number of components", flush=True)
+                
+    return psnr_scores_dict, ssim_scores_dict
 
 def parse_input():
     """Parse command line input."""
@@ -141,54 +189,38 @@ def parse_input():
     parser.add_argument("--start_offset", help="Run index of first image to be incorporated into iPCA model.", required=False, type=int)
     parser.add_argument("--num_images", help="Total number of images per run to be incorporated into model.", required=True, type=str)
     parser.add_argument("--loading_batch_size", help="Size of the batches used when loading the images on the client.", required=True, type=int)
-    parser.add_argument("--batch_size", help="Batch size for incremental transformation algorithm.", required=True, type=int)
     parser.add_argument("--num_runs", help="Number of runs to process.", required=True, type=int)
     parser.add_argument("--model", help="Path to the model file.", required=True, type=str)
     parser.add_argument("--num_gpus", help="Number of GPUs to use.", required=True, type=int)
-    parser.add_argument("--num_nodes", help="Number of nodes to use.", required=False, type=int)
-    parser.add_argument("--id_current_node", help="ID of the current node.", required=False, type=int)
+    parser.add_argument("--projections_filename", help="Path to the projections file",required=True, type=str)
     return parser.parse_args()
-
-def process_batch(current_loading_batch, fiducials, times, nanoseconds, seconds):
-    """Process a batch of loaded images."""
-    current_len = current_loading_batch.shape[0]
-    valid_indices = [i for i in range(current_len) if not np.isnan(current_loading_batch[i : i + 1]).any()]
-    current_loading_batch = current_loading_batch[valid_indices]
-    fiducials = [fiducials[i] for i in valid_indices]
-    times = [times[i] for i in valid_indices]
-    nanoseconds = [nanoseconds[i] for i in valid_indices]
-    seconds = [seconds[i] for i in valid_indices]
-    return current_loading_batch, fiducials, times, nanoseconds, seconds
 
 def main():
     # Parse input parameters
     params = parse_input()
     exp, init_run, det_type = params.exp, params.run, params.det_type
     start_offset = params.start_offset if params.start_offset is not None else 0
-    batch_size, filename = params.batch_size, params.model
+    filename = params.model
     num_gpus, num_runs = params.num_gpus, params.num_runs
-    id_current_node, num_nodes = params.id_current_node, params.num_nodes
-    num_tot_gpus = num_gpus * num_nodes
     num_images = json.loads(params.num_images)
     num_images_to_add = sum(num_images)
     loading_batch_size = params.loading_batch_size
+    projections_filename = params.projections_filename
 
+    compo_list=[1,2,3,5,10,50,100,500,1000,2000,3000,4000,5000,6000,7000,8000,9000,10000,11000,12000,13000,14000,15000]
     # Set up multiprocessing
     mp.set_start_method('spawn', force=True)
-
-    # Read current model
-    data = read_model_file(filename, id_current_node, num_gpus)
-    V, mu = data['V'], data['mu']
-    num_components=V.shape[2]
-    fiducials_list, times_list, nanoseconds_list, seconds_list = [], [], [], []
+    all_psnr_scores,all_ssim_scores = {},{}
+    for num_compo in compo_list:
+        all_psnr_scores[num_compo]=[]
+        all_ssim_scores[num_compo]=[]
     last_batch = False
-    projected_images = [[] for _ in range(num_gpus)]
-
+    
     loading_time=0
     formatting_time=0
-    transforming_time=0
-    saving_time=0
-    
+    loss_computing_time=0
+    reconstructing_time=0
+    num_skipped_events=0
     with Pool(processes=num_gpus) as pool:
         num_images_seen = 0
         for run in range(init_run, init_run + num_runs):
@@ -207,13 +239,9 @@ def main():
                 dataloader = DataLoader(dataset, batch_size=50, num_workers=2, prefetch_factor=None)
 
                 # Load data
-                current_loading_batch, current_fiducials, current_times, current_nanoseconds, current_seconds = [], [], [], [], []
+                current_loading_batch = []
                 for batch in dataloader:
-                    current_loading_batch.append(batch[0])
-                    current_fiducials.extend(batch[1])
-                    current_times.extend(batch[2])
-                    current_nanoseconds.extend(batch[3])
-                    current_seconds.extend(batch[4])
+                    current_loading_batch.append(batch)
 
                     if num_images_seen + len(current_loading_batch) >= num_images_to_add and current_loading_batch:
                         last_batch = True
@@ -221,28 +249,19 @@ def main():
 
                 # Process loaded data
                 current_loading_batch = np.concatenate(current_loading_batch, axis=0)
-                current_loading_batch, current_fiducials, current_times, current_nanoseconds, current_seconds = process_batch(
-                    current_loading_batch, current_fiducials, current_times, current_nanoseconds, current_seconds
-                )
 
                 loading_time+=time.time()
                 num_images_seen += len(current_loading_batch)
                 print(f"Loaded {event+len(current_loading_batch)} images from run {run} in {loading_time-prev_loading_time} (s)",flush=True)
                 print(f"Number of images seen: {num_images_seen}",flush=True)
                 print(f"Number of non-none images in the current batch: {current_loading_batch.shape[0]}",flush=True)
-
-                fiducials_list.append(current_fiducials)
-                times_list.append(current_times)
-                nanoseconds_list.append(current_nanoseconds)
-                seconds_list.append(current_seconds)
-
+                num_skipped_events += loading_batch_size-current_loading_batch.shape[0]
+                print(f"Total number of skipped events (none):{num_skipped_events}",flush=True)
                 formatting_time-=time.time()
                 # Split images for GPUs
-                current_loading_batch = current_loading_batch.reshape(current_loading_batch.shape[0],num_tot_gpus, -1) ######Test
-                current_loading_batch = np.split(current_loading_batch, num_tot_gpus, axis=1)
-                current_loading_batch = current_loading_batch[id_current_node*num_gpus:(id_current_node+1)*num_gpus]
+                current_loading_batch = np.split(current_loading_batch, num_gpus, axis=0)
                 shape, dtype = current_loading_batch[0].shape, current_loading_batch[0].dtype
-
+            
                 # Create shared memory for batches
                 shm_list = create_shared_images(current_loading_batch)
                 print("Images split and on shared memory",flush=True)
@@ -252,13 +271,15 @@ def main():
                 
                 device_list = [torch.device(f'cuda:{i}' if torch.cuda.is_available() else "cpu") for i in range(num_gpus)]
                 formatting_time+=time.time()
-                transforming_time-=time.time()
-                # Reduce images
-                results = pool.starmap(reduce_images, [(V, mu, batch_size, device_list, rank, shm_list, shape, dtype) for rank in range(num_gpus)])
+                reconstructing_time-=time.time()
+                # Reconstruct images and compute metrics
+                results = pool.starmap(reconstruct_and_compute_metrics,[(filename, projections_filename, device_list, range(event+int(loading_batch_size/num_gpus)*rank,event+int(loading_batch_size/num_gpus)*(rank+1)),compo_list,rank, shm_list, shape, dtype) for rank in range(num_gpus)])
+                formatting_time-=time.time()
                 for rank in range(num_gpus):
-                    projected_images[rank].append(results[rank])
-                transforming_time+=time.time()
-                
+                    for num_compo in compo_list:
+                        all_psnr_scores[num_compo].append(results[rank][0][num_compo])
+                        all_ssim_scores[num_compo].append(results[rank][1][num_compo])
+                formatting_time+=time.time()
                 # Clean up shared memory
                 for shm in shm_list:
                     shm.close()
@@ -273,41 +294,17 @@ def main():
             if last_batch:
                 break
 
-    formatting_time-=time.time()
-    # Concatenate projected images
-    for rank in range(num_gpus):
-        projected_images[rank] = np.concatenate(projected_images[rank], axis=0)
-
-    fiducials_list = np.concatenate(fiducials_list, axis=0)
-    times_list = np.concatenate(times_list, axis=0)
-    nanoseconds_list = np.concatenate(nanoseconds_list, axis=0)
-    seconds_list = np.concatenate(seconds_list, axis=0)
-
-    formatting_time+=time.time()
-    saving_time-=time.time()
-    
-    # Save the projected images
-    input_path = os.path.dirname(filename)
-    output_path = os.path.join(input_path, f"projections_{init_run}_{init_run+num_runs-1}_{num_images_to_add}_{num_components}_node_{id_current_node}.h5")
-    with h5py.File(output_path, 'w') as f:
-        _,_, num_components = np.array(projected_images).shape
-        batch_component_size = min(100,num_components)
-        batch_images = min(2000, num_images_to_add) #Stores 2k images per chunk
-        projected_images_chunk = (1,batch_images,batch_component_size)
-        append_to_dataset(f, 'projected_images', projected_images,chunks=projected_images_chunk)
-        append_to_dataset(f, 'fiducials', fiducials_list)
-        append_to_dataset(f, 'times', times_list)
-        append_to_dataset(f, 'nanoseconds', nanoseconds_list)
-        append_to_dataset(f, 'seconds', seconds_list)
-        f.create_dataset('exp', data=exp)
-        f.create_dataset('run', data=run)
-        f.create_dataset('num_runs', data=num_runs)
-        f.create_dataset('num_images', data=num_images_to_add)
-        f.create_dataset('model_used', data=filename)
-    saving_time+=time.time()
-    print(f"Projections saved under the name projections_{init_run}_{init_run+num_runs-1}_{num_images_to_add}_{num_components}_node_{id_current_node}.h5",flush=True)
-    print("Process finished",flush=True)
-    print(f"Loading time: {loading_time}(s) \n Formatting time: {formatting_time} (s) \n Transforming time: {transforming_time} (s) \n Saving time: {saving_time} (s)",flush=True)
-
+        formatting_time-=time.time()
+        # Concatenate projected images
+        for num_compo in compo_list:
+            all_psnr_scores[num_compo]=np.concatenate(all_psnr_scores[num_compo],axis=0)
+            all_ssim_scores[num_compo]=np.concatenate(all_ssim_scores[num_compo],axis=0)
+        formatting_time+=time.time()
+        print(f" Loading time: {loading_time}(s) \n Formatting time: {formatting_time} (s) \n Reconstructing time: {reconstructing_time} (s) \n Loss computing time: {loss_computing_time} (s)",flush=True)
+        with open(f"psnr.pickle", 'wb') as f:
+            pickle.dump(all_psnr_scores, f)
+        with open(f"ssim.pickle", 'wb') as f:
+            pickle.dump(all_ssim_scores, f) 
+        
 if __name__ == "__main__":
     main()

@@ -196,9 +196,10 @@ sbatch << EOF
 
 ${SBATCH_CMD_ACCOUNT}
 #SBATCH -p ${QUEUE}
-#SBATCH -t ${TIME_LIMIT:-20:00:00}  # Default to 20 hours if not provided
+#SBATCH -t ${TIME_LIMIT:-30:00:00}  # Default to 20 hours if not provided
 #SBATCH --job-name ${TASK}
 #SBATCH --ntasks=${CORES}
+#SBATCH --mem=0
 ${SBATCH_CMD_RESERVATION}
 
 source "${ANA_CONDA_MANAGE}psconda.sh"

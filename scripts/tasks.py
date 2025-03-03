@@ -269,7 +269,7 @@ def transform(config):
             pool.starmap(transform_node, args)
         algo_end_time = time.time()
         print(f"Algorithm time: {algo_end_time - algo_start_time}")
-
+    
     model_path = os.path.dirname(task.model)
     tag = f"projections_{task.start_run}_{task.max_run}_{num_images}_{num_components}"
     merge_pypcas(model_path, tag, num_nodes,mode='transform')
@@ -285,3 +285,177 @@ def fit_transform(config):
     end_time = time.time()
     print(f"Transforming done in {end_time-int_time} (s)",flush=True)
     print(f"Total time : {end_time-start_time} (s)",flush=True)
+
+def compute_loss_node(config,num_nodes = 1, id_current_node = 0):
+    setup = config.setup
+    task = config.compute_loss
+    exp = setup.exp
+    run = task.start_run
+    det_type = setup.det_type
+    start_offset = task.start_offset
+    num_images = task.num_images
+    num_tot_images = num_images
+    log_dir = setup.log_dir
+    distribution_images = [] 
+    max_run = task.max_run
+    projections_filename = task.projections_filename
+    ##
+    num_runs = 0
+    while num_images > 0:
+        max_event = compute_max_events(exp, run+num_runs, det_type)
+        images_for_run = min(max_event, num_images)
+        distribution_images.append(images_for_run)
+        num_images -= images_for_run
+        num_runs += 1
+
+    if num_images == -1: #includes all images of the run
+        num_runs = max_run - run + 1
+        num_images=0
+        for r in range(run,max_run+1):
+            images_for_run=compute_max_events(exp,r,det_type)
+            num_images+=images_for_run
+            distribution_images.append(images_for_run)
+            
+    ##
+    print(f"Number of runs: {num_runs}")
+    num_images_str = json.dumps(distribution_images)
+    num_gpus = task.num_gpus
+    model = task.model
+
+    comm = MPI.COMM_WORLD
+    ncores = comm.Get_size()
+
+    if task.get('loading_batch_size') is not None:
+        loading_batch_size = task.loading_batch_size
+    else:
+        loading_batch_size = 2000
+
+    server_path = os.path.join(os.path.dirname(os.path.realpath(__file__)),  "../data_loading/iserver.py")
+    client_path = os.path.join(os.path.dirname(os.path.realpath(__file__)),  "../processing/compute_loss.py")
+
+    command = "which python; ulimit -n 8000;"
+    command += f"python {server_path} & echo 'Server is running';"
+    if id_current_node==0:
+        command += " ../monitor.sh &"
+    command += f" echo 'Number of images: {num_tot_images}'; echo 'Number of events to collect per run: {num_images_str}'; echo 'Total number of events to collect: {num_images}'"
+    command += "; sleep 10"
+    command += "; conda deactivate; echo 'Server environment deactivated'"
+    command += "; conda activate /sdf/group/lcls/ds/tools/conda_envs/py3.11-nopsana-torch-rapids; which python; echo 'Client environment activated'"
+    command += f"; python {client_path} -e {exp} -r {run} -d {det_type} --start_offset {start_offset} --num_images '{num_images_str}' --loading_batch_size {loading_batch_size} --num_runs {num_runs} --model {model} --num_gpus {num_gpus} --num_nodes {num_nodes} --id_current_node {id_current_node} --projections_filename {projections_filename}"
+
+    js = JobScheduler(os.path.join(".", f'compute_loss_{run}_{max_run}_{num_tot_images}_node_{id_current_node}.sh'),queue = 'ampere', ncores=  1, jobname=f'compute_loss_{run}_{max_run}_{num_tot_images}_node_{id_current_node}',logdir=log_dir,account=config.setup.account,mem = '200G',num_gpus = num_gpus) ##ACCOUNT PREEMPTABLE
+    js.write_header()
+    js.write_main(f"{command}\n", dependencies=['psana'],find_python_path=False)
+    js.clean_up()
+    js.submit()
+    print('All done!')
+
+def compute_loss(config):
+    task = config.compute_loss
+    num_nodes = task.num_nodes
+    num_images = task.num_images
+    if num_images == -1: #includes all images of the run
+        num_runs = task.max_run - task.start_run + 1
+        num_images=0
+        for r in range(task.start_run,task.max_run+1):
+            images_for_run=compute_max_events(config.setup.exp,r,config.setup.det_type)
+            num_images+=images_for_run
+    
+    if num_nodes ==1:
+        compute_loss_node(config)
+    else:
+        import multiprocessing
+        algo_start_time = time.time()
+        with multiprocessing.Pool(processes=num_nodes) as pool:
+            args = [(config, num_nodes, node) for node in range(num_nodes)]
+            pool.starmap(compute_loss_node, args)
+        algo_end_time = time.time()
+        print(f"Algorithm time: {algo_end_time - algo_start_time}")
+        
+    print('All nodes done!')
+    num_nodes=4
+    from misc.merge_losses import main
+    plot_components=[1,2,3,4,5,10,20,30,50,100,200,300,400,500,600,700,800,900,1000,1100,1200,1300,1400,1500,2000,2500,3000,3500,4000,4500,5000,5500,6000,6500,7000,7500,8000,8500,9000,9500,10000,10500,11000,11500,12000,12500,13000,13500,14000,14500,15000]
+    smoothing_window_size=100
+    main(num_nodes,'./',False,plot_components,smoothing_window_size)
+
+def pipeline_for_loss(config):
+    start_time = time.time()
+    fit(config)
+    int_time = time.time()
+    print(f"Fitting done in {int_time-start_time} (s)",flush=True)
+    transform(config)
+    int_time2 = time.time()
+    print(f"Transforming done in {int_time2-int_time} (s)",flush=True)
+    compute_loss(config)
+    end_time=time.time()
+    print(f"Loss computing done in {end_time-int_time2} (s)",flush=True)
+    print(f"Total time : {end_time-start_time} (s)",flush=True)
+
+
+def compute_psnr_ssim(config):
+    setup = config.setup
+    task = config.compute_psnr_ssim
+    exp = setup.exp
+    run = task.start_run
+    det_type = setup.det_type
+    start_offset = task.start_offset
+    num_images = task.num_images
+    num_tot_images = num_images
+    log_dir = setup.log_dir
+    distribution_images = [] 
+    max_run = task.max_run
+    projections_filename = task.projections_filename
+    ##
+    num_runs = 0
+    while num_images > 0:
+        max_event = compute_max_events(exp, run+num_runs, det_type)
+        images_for_run = min(max_event, num_images)
+        distribution_images.append(images_for_run)
+        num_images -= images_for_run
+        num_runs += 1
+
+    if num_images == -1: #includes all images of the run
+        num_runs = max_run - run + 1
+        num_images=0
+        for r in range(run,max_run+1):
+            images_for_run=compute_max_events(exp,r,det_type)
+            num_images+=images_for_run
+            distribution_images.append(images_for_run)
+            
+    ##
+    print(f"Number of runs: {num_runs}")
+    num_images_str = json.dumps(distribution_images)
+    num_gpus = task.num_gpus
+    model = task.model
+
+    comm = MPI.COMM_WORLD
+    ncores = comm.Get_size()
+
+    if task.get('loading_batch_size') is not None:
+        loading_batch_size = task.loading_batch_size
+    else:
+        loading_batch_size = 2000
+
+    server_path = os.path.join(os.path.dirname(os.path.realpath(__file__)),  "../data_loading/iserver.py")
+    client_path = os.path.join(os.path.dirname(os.path.realpath(__file__)),  "../processing/compute_psnr_ssim.py")
+
+    command = "which python; ulimit -n 8000;"
+    command += f"python {server_path} & echo 'Server is running';"
+    command += " ../monitor.sh &"
+    command += f" echo 'Number of images: {num_tot_images}'; echo 'Number of events to collect per run: {num_images_str}'; echo 'Total number of events to collect: {num_images}'"
+    command += "; sleep 10"
+    command += "; conda deactivate; echo 'Server environment deactivated'"
+    command += "; conda activate /sdf/group/lcls/ds/tools/conda_envs/py3.11-nopsana-torch-rapids; which python; echo 'Client environment activated'"
+    command += f"; python {client_path} -e {exp} -r {run} -d {det_type} --start_offset {start_offset} --num_images '{num_images_str}' --loading_batch_size {loading_batch_size} --num_runs {num_runs} --model {model} --num_gpus {num_gpus} --projections_filename {projections_filename}"
+
+    js = JobScheduler(os.path.join(".", f'compute_psnr_ssim_{run}_{max_run}_{num_tot_images}.sh'),queue = 'ampere', ncores=  1, jobname=f'compute_psnr_ssim_{run}_{max_run}_{num_tot_images}',logdir=log_dir,account=config.setup.account,mem = '200G',num_gpus = num_gpus) ##ACCOUNT PREEMPTABLE
+    js.write_header()
+    js.write_main(f"{command}\n", dependencies=['psana'],find_python_path=False)
+    js.clean_up()
+    js.submit()
+    print('All done!')
+    from misc.plots_psnr_ssim import draw_plots
+    draw_plots(plot_components=None, smoothing_window_size=50,metric='psnr')
+    draw_plots(plot_components=None, smoothing_window_size=50,metric='ssim')
+

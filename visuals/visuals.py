@@ -200,10 +200,12 @@ def averaged_imgs(model_filename, filename, downsample_factor=10, coords=(0,0,1,
         num_compo = V.shape[2]
         mu = f['mu'][:]
         img_binned = create_average_img(img_binned, V, mu)
+        mu = np.array(mu)
     
     with open(pickle_path, 'wb') as f:
         pickle.dump(img_binned, f)
         pickle.dump(weights, f)
+        pickle.dump(mu, f)  ########################################################################TEST
     
     int_time1=time.time()
     print(f"Average images created and stored in {int_time1-start_time} (s)", flush=True)
@@ -327,7 +329,8 @@ def cluster_averaged_imgs(model_filename, filename, num_clusters=3, dbscan=None,
         with open(pickle_path, 'rb') as f:
             img_binned = pickle.load(f)
             weights = pickle.load(f)
-            
+            mu = pickle.load(f) ##########################################################################################"
+    
     int_time1=time.time()
     print(f"Average images and weights created/gathered in {int_time1-start_time} (s)", flush=True)
     grid_size = int(np.sqrt(len(img_binned.keys())))
@@ -362,7 +365,7 @@ def cluster_averaged_imgs(model_filename, filename, num_clusters=3, dbscan=None,
         for idx in range(len(weights_cluster)):
             cluster_images[idx] = cluster_images[idx] * weights_cluster[idx]
         cluster_coords = coordinates[cluster_labels == i]
-        mean_image = np.sum(cluster_images, axis=0) / np.sum(weights_cluster)
+        mean_image = np.sum(cluster_images, axis=0) / np.sum(weights_cluster) #####################################################
         var_image = np.sqrt(
             np.sum(
                 weights_cluster[:, np.newaxis] * (images[cluster_labels == i] - mean_image)**2,

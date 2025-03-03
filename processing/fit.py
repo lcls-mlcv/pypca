@@ -96,11 +96,14 @@ def append_to_dataset(f, dataset_name, data):
         del f[dataset_name]
         f.create_dataset(dataset_name, data=combined_data)
 
-def create_or_update_dataset(f, name, data):
+def create_or_update_dataset(f, name, data,chunks=None):
     """Create or update a dataset in an HDF5 file."""
     if name in f:
         del f[name]
-    f.create_dataset(name, data=data)
+    if chunks:
+        f.create_dataset(name, data=data,chunks=chunks)
+    else:
+        f.create_dataset(name, data=data)
 
 def create_shared_images(images):
     """Create shared memory for a list of images."""
@@ -305,7 +308,10 @@ def update_model(model, model_state_dict, id_current_node=0, metadata=None):
 
     # Save the updated model to file
     with h5py.File(output_path, 'w') as f:
-        create_or_update_dataset(f, 'V', data=V)
+        num_components = np.array(S).shape[1]
+        batch_component_size = min(100, num_components)
+        v_chunk = (1, np.array(V).shape[1], batch_component_size)
+        create_or_update_dataset(f, 'V', data=V, chunks=v_chunk)
         create_or_update_dataset(f, 'mu', data=mu)
         create_or_update_dataset(f, 'S', data=S)
         create_or_update_dataset(f, 'num_images', data=new_num_images)
@@ -453,6 +459,7 @@ if __name__ == "__main__":
                     print(f"Number of non-None images in the current batch: {current_loading_batch.shape[0]}", flush=True)
 
                     # Split images across GPUs and nodes
+                    current_loading_batch = current_loading_batch.reshape(current_len,num_tot_gpus, -1) ######Test
                     current_loading_batch = np.split(current_loading_batch, num_tot_gpus, axis=1)
                     current_loading_batch = current_loading_batch[id_current_node * num_gpus : (id_current_node + 1) * num_gpus]
 
