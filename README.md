@@ -1,7 +1,7 @@
 
 # PyPCA Documentation
 
-PyPCA is an incremental and parallelized implementation of Principal Component Analysis (PCA), designed to efficiently process large datasets.
+PyPCA is an incremental and parallelized implementation of Principal Component Analysis (PCA), designed specifically for large-scale experimental data processing within the LCLS (Linac Coherent Light Source) ecosystem.
 
 ---
 
